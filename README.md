@@ -1,5 +1,6 @@
-# Test OpenAPI Specification
+# CacaoID OpenAPI Specification
 
+[Documentation](https://monedacacao.github.io/cacaoid-openapi/)
 
 ## Working on specification
 ### Install
