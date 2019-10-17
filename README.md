@@ -1,6 +1,6 @@
 # CacaoID OpenAPI Specification
 
-[Documentation](https://monedacacao.github.io/cacaoid-openapi/)
+[Documentation](https://tecnologiadebloques.github.io/openapi-cacaoid/)
 
 ## Working on specification
 ### Install
