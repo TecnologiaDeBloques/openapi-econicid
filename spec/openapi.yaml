@@ -884,6 +884,8 @@ components:
           $ref: "#/components/schemas/ProfileType"
         display_name:
           $ref: "#/components/schemas/DisplayName"
+        avatar:
+          $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
         email:
@@ -915,6 +917,11 @@ components:
       type: string
       minLength: 1
       example: "Juan Rulfo"
+    Avatar:
+      description: Public facing avatar of the profile.
+      type: string
+      minLength: 1
+      example: "ajolotle"
     Birthdate:
       description: Date of birth of the person or buisness
       type: string
@@ -945,6 +952,8 @@ components:
           $ref: "#/components/schemas/ProfileType"
         display_name:
           $ref: "#/components/schemas/DisplayName"
+        avatar:
+          $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
         email:
@@ -956,6 +965,8 @@ components:
       properties:
         display_name:
           $ref: "#/components/schemas/DisplayName"
+        avatar:
+          $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
         email:
@@ -1053,8 +1064,6 @@ components:
           $ref: "#/components/schemas/KeyName"
         scopes:
           $ref: "#/components/schemas/KeyScopes"
-        user_password:
-          $ref: "#/components/schemas/KeyPassword"
     CreateKeyResponse:
       type: object
       properties:
@@ -1110,14 +1119,12 @@ components:
     CreateDeviceRequest:
       type: object
       properties:
-        device_name:
+        name:
           $ref: "#/components/schemas/DeviceName"
         scopes:
           $ref: "#/components/schemas/KeyScopes"
         notification_token:
           $ref: "#/components/schemas/DeviceNotificationToken"
-        user_password:
-          $ref: "#/components/schemas/KeyPassword"
     CreateDeviceResponse:
       type: object
       properties:
@@ -1130,7 +1137,7 @@ components:
     UpdateDeviceRequest:
       type: object
       properties:
-        device_name:
+        name:
           $ref: "#/components/schemas/DeviceName"
         notification_token:
           $ref: "#/components/schemas/DeviceNotificationToken"
