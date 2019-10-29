@@ -956,10 +956,6 @@ components:
           $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
-        email:
-          $ref: "#/components/schemas/Email"
-        phone:
-          $ref: "#/components/schemas/Phone"
     UpdateProfileRequest:
       type: object
       properties:
@@ -969,10 +965,6 @@ components:
           $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
-        email:
-          $ref: "#/components/schemas/Email"
-        phone:
-          $ref: "#/components/schemas/Phone"
     AuthorizeOperatorRequest:
       type: object
       properties:
