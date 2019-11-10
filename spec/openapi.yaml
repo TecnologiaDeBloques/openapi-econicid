@@ -105,7 +105,7 @@ paths:
     get:
       tags:
         - Profiles
-      summary: List Profiles
+      summary: List profiles
       description: Returns a list of all your profiles sorted chronologicaly by creation date.
       operationId: listProfiles
       parameters:
@@ -241,6 +241,72 @@ paths:
           $ref: "#/components/responses/NotFound"
         "409":
           $ref: "#/components/responses/Conflict"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "500":
+          $ref: "#/components/responses/ServerError"
+
+  "/profiles/{profile_id}/requestVerification":
+    parameters:
+      - $ref: "#/components/parameters/profileID"
+    post:
+      tags:
+        - Profiles
+      summary: Request email or sms verification code
+      description: Send an Email or an SMS message containing a verification code, which can be used to associate the provided email or phone number with your Cacao Profile.
+      operationId: profileRequestVerification
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RequestVerificationRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RequestVerificationResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "402":
+          $ref: "#/components/responses/RequestFailed"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "500":
+          $ref: "#/components/responses/ServerError"
+
+  "/profiles/{profile_id}/verify":
+    parameters:
+      - $ref: "#/components/parameters/profileID"
+    post:
+      tags:
+        - Profiles
+      summary: Verify email or phone number
+      description: Using a verification code, associate an email or phone number to your Cacao Profile.
+      operationId: profileVerify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProfileVerifyRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProfileVerifyResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "402":
+          $ref: "#/components/responses/RequestFailed"
         "429":
           $ref: "#/components/responses/TooManyRequests"
         "500":
@@ -965,6 +1031,52 @@ components:
           $ref: "#/components/schemas/Avatar"
         birthdate:
           $ref: "#/components/schemas/Birthdate"
+    RequestVerificationRequest:
+      type: object
+      properties:
+        delivery_method:
+          description: Method used to deliver the code. Can be `email` or `sms`.
+          type: string
+          format: string
+          example: "sms"
+        destinatary:
+          description: Email or phone number that will receive the verification code.
+          type: string
+          format: string
+          example: "+525566668888"
+    RequestVerificationResponse:
+      type: object
+      properties:
+        destinatary:
+          description: Email or phone number that received the verification code.
+          type: string
+          format: string
+          example: "+525566668888"
+    ProfileVerifyRequest:
+      type: object
+      properties:
+        code:
+          description: Verification code that was sent to the destinatary.
+          type: string
+          format: string
+          example: "865981"
+        destinatary:
+          description: Email or phone number that received the verification code.
+          type: string
+          format: string
+          example: "+525566668888"
+    ProfileVerifyResponse:
+      type: object
+      properties:
+        success:
+          description: Was the verification successful.
+          type: boolean
+          example: true
+        destinatary:
+          description: Email or phone number that received the verification code.
+          type: string
+          format: string
+          example: "+525566668888"
     AuthorizeOperatorRequest:
       type: object
       properties:
