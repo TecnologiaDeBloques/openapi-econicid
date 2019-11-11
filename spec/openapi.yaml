@@ -1060,6 +1060,11 @@ components:
           type: string
           format: string
           example: "865981"
+        delivery_method:
+          description: Method used to deliver the code. Can be `email` or `sms`.
+          type: string
+          format: string
+          example: "sms"
         destinatary:
           description: Email or phone number that received the verification code.
           type: string
