@@ -991,7 +991,7 @@ components:
     Birthdate:
       description: Date of birth of the person or buisness
       type: string
-      format: date
+      example: "13-11-2018"
     Email:
       description: Public email of the profile.
       type: string
