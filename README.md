@@ -1,6 +1,6 @@
 # econicid OpenAPI REST Specification
 
-[Link](https://tecnologiadebloques.github.io/openapi-cacaoid/)
+[Documentation link](https://tecnologiadebloques.github.io/openapi-econicid/)
 
 ## Working on specification
 ### Install
