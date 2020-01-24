@@ -1,6 +1,6 @@
-# CacaoID OpenAPI Specification
+# econicid OpenAPI REST Specification
 
-[Documentation](https://tecnologiadebloques.github.io/openapi-cacaoid/)
+[Link](https://tecnologiadebloques.github.io/openapi-cacaoid/)
 
 ## Working on specification
 ### Install
