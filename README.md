@@ -1,4 +1,4 @@
-# econicid OpenAPI REST Specification
+# Econic ID OpenAPI REST Specification
 
 [Documentation link](https://tecnologiadebloques.github.io/openapi-econicid/)
 

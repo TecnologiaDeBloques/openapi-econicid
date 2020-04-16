@@ -53,28 +53,48 @@ info:
 tags:
   - name: Profile
     description: |
-      Collection of settings and information associated with a user. There are two types of profiles, 
-      personal profiles and business profiles. A user can only have one personal profile, but multiple business profiles.
-      A personal profile is created automatically for a user when he creates a Econic ID account. 
+      Defined as an actor in the system, there can be two types of profiles: Personal (representing a human) and business (representing an organization).
+
+      When you create an Econic ID account, you create a `user` which is an internal resource of the system that is associated with your login credentials,
+      and a personal `profile`. This personal `profile` represents you as an individual, but since you may want to act as an organization you can create a 
+      separate `profile` know as a business `profile`.
+
+      Most resources are owned by `profiles` instead of `users`, so this way you can separate your personal account from your business account while not having to 
+      create multiple Econic ID accounts and to manage multiple credentials.
+
+      A `user` can only have a single personal `profile`, which as mentioned before is automatically created.
+
       <SchemaDefinition schemaRef="#/components/schemas/Profile" />
   - name: Key
     description: |
-      A `Key` allows a user to authorize requests and transactions. `Keys` are comprised from a Ed22519 key pair and a Transaction Key. The key pair its utilized for signing requests, while the Transaction Key must be 
-      utilized for authorizing monetary transactions. After creation, the Ed25519 Public Key is stored in our server, and the Private Key is sent alongside the Transaction Key back the client. 
-      It is expected for the client to save the Private Key and the Transaction Key as these are unrecoverable. A user will need to create a new Key if he loses this credentials.
+      API Keys comprised of a ED25519 Key Pair and a secret known as Transaction Key. 
+
+      `Keys` allow `users` to authenticate and to authorize requests in all Econic systems. The ED25519 key pair its utilized for signing requests, while the Transaction Key must be 
+      added as well when authorizing transactions. After creation, the Ed25519 Public Key is stored in our server, and the Private Key is sent alongside the Transaction Key back the client. 
+
+      You must save the Private Key and the Transaction Key after creation, as both are unrecoverable and only sent as a response during the key creation. 
+      It will be needed to create a new Key if you lose any of these secrets.
+
       <SchemaDefinition schemaRef="#/components/schemas/Key" />
   - name: Device
     description: |
-      A `Device` is comprised of a `Key` and a couple of additional fields. Devices serve the same functions as keys but also allow for the reception of push notifications.
+      `Key` paired to a physical device which can receive push notifications.
+
+      A `Device` is comprised of a `Key` and serves the same functions as a `Key`, but also allows for the reception of push notifications.
       <SchemaDefinition schemaRef="#/components/schemas/Device" />
   - name: Identity Proof
     description: |
-      Identity Proofs are as the name suggest, physical evidence that the user is the legal person he claims to be.
-      Submitting Identity Proofs allows for the verification of the user account.
+      Evidence provided by the `profile` which "provees" the identity of the legal person it represents.
+
+      Identity Proofs are as the name suggest, allow the `profile` to build a digital identity by registering things such as a government issued ID, or a address proof.
+
       <SchemaDefinition schemaRef="#/components/schemas/IdentityProof" />
   - name: Application
     description: |
-      Applications are the official way to create a Econic intrgration. **Unsopported for now**
+      Allow the integration of Econic ID by registering a new OAuth2 client.
+
+      **[Currently not enabled]**
+
       <SchemaDefinition schemaRef="#/components/schemas/Applications" />
 x-tagGroups:
   - name: "Core Resources"
@@ -947,7 +967,7 @@ components:
           $ref: "#/components/schemas/ProfileID"
         owner_id:
           $ref: "#/components/schemas/OwnerID"
-        type:
+        profile_type:
           $ref: "#/components/schemas/ProfileType"
         display_name:
           $ref: "#/components/schemas/DisplayName"
@@ -959,8 +979,8 @@ components:
           $ref: "#/components/schemas/Email"
         phone:
           $ref: "#/components/schemas/Phone"
-        verification_level:
-          $ref: "#/components/schemas/VerificationLevel"
+        trust_level:
+          $ref: "#/components/schemas/TrustLevel"
     ProfileID:
       description: Base64 encoded unique identifier of a profile.
       type: string
@@ -1002,8 +1022,8 @@ components:
       description: Public phone number of the profile.
       type: string
       example: "5555555555"
-    VerificationLevel:
-      description: The level of verification of the profile.
+    TrustLevel:
+      description: How trusted is this profile.
       type: string
       minLength: 1
       example: "FULL"
@@ -1127,7 +1147,7 @@ components:
           $ref: "#/components/schemas/KeyName"
         active:
           $ref: "#/components/schemas/KeyActive"
-        created_at:
+        created:
           $ref: "#/components/schemas/KeyCreatedAt"
         last_used:
           $ref: "#/components/schemas/KeyLastUsed"
