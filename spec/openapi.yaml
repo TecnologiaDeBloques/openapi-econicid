@@ -97,9 +97,9 @@ security:
   - oAuth: []
   - APIKey: []
 servers:
-  - url: "https://testnet.econicid.com/api/v1/"
+  - url: "https://testnet.econicid.com/"
     description: Testing environment
-  - url: "https://www.econicid.com/api/v1"
+  - url: "https://www.econicid.com/"
     description: Production environment
 paths:
   "/profiles/":
