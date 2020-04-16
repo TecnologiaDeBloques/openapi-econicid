@@ -1,60 +1,61 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: Cacao ID API Reference
-  termsOfService: "https://www.monedacacao.com/terminos/"
+  title: Econic ID API Reference
+  termsOfService: "https://www.econicnet.com/terms/"
   contact:
-    email: holamundo@monedacacao.com
-    url: "http://www.monedacacao.com/contacto"
+    email: devops@tecnologiadebloques.com
+    url: "http://www.econicnet.com/contact"
   license:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
   x-logo:
-    url: "https://storage.googleapis.com/cacao-static-content/logos/cacao-id/ci_logo_green.png"
+    url: "https://storage.googleapis.com/econic-assets/econicid_logo_white.png"
   description: |
     # Introduction
-    The Cacao ID API implements the OAuth 2 protocol and is built on HTTP around REST and resource oriented URLs. 
-    It accepts form-encoded request bodies and returns JSON responses.
-    Standard HTTP response codes and verbs are used. 
-    You can try the Cacao ID API in its testnet environment.
-    Each environment has its own accounts and objects, so you will need
-    to create a CacaoID account for the testnet environment.
+    Econic ID is an *authentication* and *authorization* system which at its core it allows users to manage their digital identities, 
+    by allowing them to upload proofs, such as government issued IDs, that prove beyond doubt that they are the person who they claim to be;
+    sharing those proofs with third parties; and creating digital credentials. 
+
+    The Econic ID API implements the OAuth 2 protocol and is built on HTTP around REST and resource oriented URLs. 
+    It accepts requests bodies and returns responses encoded in JSON. Standard HTTP response codes and verbs are used. 
+
+    # Enviroments
+    All the Econic products have a public sandbox environment, known as testnet, for demo and testing purposes. Each environment has 
+    its own accounts and objects, so you will need to create a separate Econic ID account for the testnet environment.
 
     # Authentication
-    CacaoID is built utilizing the OAuth 2.0 protocol. 
-
-    There are two forms of authentication:
-    - OAuth2 with Credentails
+    Econic ID implements the OAuth 2.0 protocol, and thus supports two forms of authentication
+    - OAuth2 tokens 
     - API Keys
 
-    Once a user has created a Cacao ID account he can create API keys to allow access without the need for his credentials. As
-    a general rule, if a humans is behind the interaction OAuth2 should be used while API Keys must be reserved for systems.
+    OAuth2 tokens are obtained after creating an account, or loging in though our OAuth2 form with your user credentials.
+    For security reasons, these tokens expire every 1 hour. API Keys are created and managed though this API, while using an OAuth token as authentication.
 
-    # Pagination
-    TODO
-
-    # SDKs
-    TODO
+    Once a user has created a Econic ID account it is recommended that he creates an API key to allow him access without the need for his credentials. 
+    As a general rule, you should only use OAuth2 tokens when creating an account, or if your integration doesn't allow secure storage of the API Keys. 
 
     # Getting Started
-    To integrate with the CacaoID API the first step required is to have a Cacao OAuth Client registered. This is done by one of our executives who will provide you with the credentials.
-    Once you have your credentials you are required to implement a OAuth Client in your mobile or web application utilizing one of the official OAuth libraries. After you incorporate the `OAuth 
-    Authorization Code Flow` into your application you should be able to register or login with a CacaoID account. 
+    We recomend you use [Postman](https://www.postman.com/) while getting familiar with the API. Once you have requested access, you will be provided with 
+    an OAuth2 client credentials, so you can create your Econic ID account though Postman or a OAuth2 library. 
 
-    Once you have logged in in your account, you will get an OAuth token, which can be used to interact with the API. However, for security concerns OAuth tokens have short expiration times, so
-    it is recommended that you create an `API Key` or a `Device`. An `API Key` is a Ed25519 key pair that allows authorization utilizing signatures, so instead of having to refresh the OAuth token, 
-    the client stores a Private Key which is utilized to generate the authorizing signature. A `Device` has the same functionality as an `API Key` but is intended for Mobile Apps that can receive
-    push notifications. 
+    The first thing you want to do after creating your account, is to create a pair of API Keys. This is done though a `Create Key` action in the `Keys` resource.
+    After creating the resource, the server will return to you the `Public Key`, the `Private Key` and the `Transaction Key` of your newly created `API Keys`. 
+    It is very important you save the `Private Key` as this is only returned during the key creating and can't be recovered. If you lose it, you will need to
+    create new `Keys`. 
 
-    We recommend the use of API Keys only on devices where the storage of secrets can be secure such as Mobile Apps or Server side applications. Web Applications (browser based)
-    should stick to using OAuth even if the sessions are short.
+    Once you have created your API Key, you can sign future requests using the `Private Key` you saved previously. While signatures can be created in any programming language,
+    for convinience we recommend you use our [developer toolkit](https://github.com/TecnologiaDeBloques/node-developer-toolkit). This will generate the signature, and if you
+    are using Postman it will automatically add it to the request header.
+
+    After this, you are free to explore the API and its different resources.
 
 tags:
   - name: Profile
     description: |
       Collection of settings and information associated with a user. There are two types of profiles, 
       personal profiles and business profiles. A user can only have one personal profile, but multiple business profiles.
-      A personal profile is created automatically for a user when he creates a Cacao ID account. 
+      A personal profile is created automatically for a user when he creates a Econic ID account. 
       <SchemaDefinition schemaRef="#/components/schemas/Profile" />
   - name: Key
     description: |
@@ -73,7 +74,7 @@ tags:
       <SchemaDefinition schemaRef="#/components/schemas/IdentityProof" />
   - name: Application
     description: |
-      Applications are the official way to create a Cacao intrgration. **Unsopported for now**
+      Applications are the official way to create a Econic intrgration. **Unsopported for now**
       <SchemaDefinition schemaRef="#/components/schemas/Applications" />
 x-tagGroups:
   - name: "Core Resources"
@@ -96,9 +97,9 @@ security:
   - oAuth: []
   - APIKey: []
 servers:
-  - url: "https://testnet.cacaoid.com/api/v1/"
+  - url: "https://testnet.econicid.com/api/v1/"
     description: Testing environment
-  - url: "https://www.cacaoid.com/api/v1"
+  - url: "https://www.econicid.com/api/v1"
     description: Production environment
 paths:
   "/profiles/":
@@ -253,7 +254,7 @@ paths:
       tags:
         - Profiles
       summary: Request email or sms verification code
-      description: Send an Email or an SMS message containing a verification code, which can be used to associate the provided email or phone number with your Cacao Profile.
+      description: Send an Email or an SMS message containing a verification code, which can be used to associate the provided email or phone number with your Econic Profile.
       operationId: profileRequestVerification
       requestBody:
         content:
@@ -286,7 +287,7 @@ paths:
       tags:
         - Profiles
       summary: Verify email or phone number
-      description: Using a verification code, associate an email or phone number to your Cacao Profile.
+      description: Using a verification code, associate an email or phone number to your Econic Profile.
       operationId: profileVerify
       requestBody:
         content:
@@ -1312,7 +1313,7 @@ components:
       description: URL of where the submitted image of the proof is stored.
       type: string
       minLength: 1
-      example: "www.cacaoid.com/bucket/321dufas89"
+      example: "www.econicid.com/bucket/321dufas89"
     ProofValidatorID:
       description: Unique identifier of the proof validator.
       type: string
@@ -1485,7 +1486,7 @@ components:
           schema:
             $ref: "#/components/schemas/ErrorResponse"
     ServerError:
-      description: "Something went wrong on Cacao's end."
+      description: "Something went wrong on Econic's end."
       content:
         application/json:
           schema:
@@ -1572,19 +1573,19 @@ components:
   securitySchemes:
     oAuth:
       description:
-        CacaoID implements the OAuth protocol. A user can create and login to his CacaoID account by utilizing an official OAuth client.
-        After the he can grant certain permissions utilizing scopes. Once he has logged in successfuly, the server will return a token that can be used for accessing the CacaoID API.
+        Econic ID implements the OAuth protocol. A user can create and login to his Econic ID account by utilizing an official OAuth client.
+        After the he can grant certain permissions utilizing scopes. Once he has logged in successfuly, the server will return a token that can be used for accessing the Econic ID API.
       type: oauth2
       flows:
         authorizationCode:
-          tokenUrl: "http://testnet.cacaoid.com/oauth2/token"
-          authorizationUrl: "http://testnet.cacaoid.com/oauth2/auth"
+          tokenUrl: "http://testnet.econicid.com/oauth2/token"
+          authorizationUrl: "http://testnet.econicid.com/oauth2/auth"
           scopes:
             "read:users": read users info
             "write:users": modify or remove users
     APIKey:
       description:
-        The CacaoID API can be accessed utilizing API Keys which are based on the Ed25519 public-key system.
+        The Econic ID API can be accessed utilizing API Keys which are based on the Ed25519 public-key system.
         An API Key can be created by making a request to the `create key` endpoint while utilizing a valid OAuth Token.
         The server will return a Key pair that contains both the Public Key which is the identifier of the API Key and a Private Key which is used to sign requests.
         When utilizing an API Key for Autorization, the API Key must be included in the headers. **Example** `Authorization:` `ApiKey-v1 etRWGzf+AY8m6DHalxO28aTDi0PXRi7w3L4F0XKSf/Y=`
