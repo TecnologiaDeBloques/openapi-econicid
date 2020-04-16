@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "bd693a20-e285-4704-a69c-f2848e8bdddd",
+		"name": "Econic ID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/user/profiles",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f575c682-4e57-43e5-9c92-49efb3e929d7",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{econic_id_url}}/user/profiles",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/profiles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\": \"BUSINESS\",\n\"display_name\": \"Tecnología de Bloques\",\n\"avatar\": \"ajolotle\",\n\"birthdate\": \"12-01-1900\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/profiles",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/profiles/:id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{econic_id_url}}/user/profiles/0xe6254b2ba2da45b4243afe7b3d48fed100891d3b",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"profiles",
+						"0xe6254b2ba2da45b4243afe7b3d48fed100891d3b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/profiles/:id/requestVerification",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"delivery_method\": \"sms\", \"destinatary\": \"+525561183957\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/profiles/0xdc56efc0533150495f85160ccbc0f5391bf383d5/requestVerification",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"profiles",
+						"0xdc56efc0533150495f85160ccbc0f5391bf383d5",
+						"requestVerification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/profiles/:id/verify",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"166C4E\",\n    \"destinatary\": \"+525561183957\",\n    \"delivery_method\": \"sms\"\n}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/profiles/0xdc56efc0533150495f85160ccbc0f5391bf383d5/verify",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"profiles",
+						"0xdc56efc0533150495f85160ccbc0f5391bf383d5",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/devices ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"My iPhone\", \"scopes\": \"keys devices profiles\",\"notification_token\": \"bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/devices",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/devices/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"My iPhone\", \"scopes\": \"keys devices profiles\",\"notification_token\": \"bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/devices/0xaf2e5bf0fc358561904fcafe3e34070721c8a05e4c95b8cfb9cc4334a2e93a92",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"devices",
+						"0xaf2e5bf0fc358561904fcafe3e34070721c8a05e4c95b8cfb9cc4334a2e93a92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/devices ",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "viUDI7-R7K286Aa2e6KQG4qc_QFE1MTlyRRvybPQv8g.GifKWN_strn57Jq_39fJ-NDj51OifSnC1h0p1xMuzXw",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Test Device 2\", \"scopes\": \"keys devices profiles\",\"notification_token\": \"bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/devices",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/devices",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/devices/0xa2c7049ec5e1eee35c9f806dd81941ef22898210607770de353ec78b3fcd6392",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"devices",
+						"0xa2c7049ec5e1eee35c9f806dd81941ef22898210607770de353ec78b3fcd6392"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/keys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"My future deleted iphone\", \"scopes\": \"keys devices profiles\",\"notification_token\": \"bk3RNwTe3H0:CI2k_HHwfdasfasdfasd\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/keys",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"keys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/keys",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "rHyVzOL_0uLfUVhXNNyVyvJrOMZZ3GnMIagz-I-3C_g.7OpRl9Gfgl0cAMDuLgy6Pii1sW45U2GJw-DujYlsRvo",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Postman Keys\", \"scopes\": \"keys devices profiles\"}"
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/keys",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"keys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/keys",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "ApiKey-v1 {{api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{econic_id_url}}/user/keys/0x146a33e2638a671e2c614ce01960456f34a66def46df68a0dfd35afb691eae0e",
+					"host": [
+						"{{econic_id_url}}"
+					],
+					"path": [
+						"user",
+						"keys",
+						"0x146a33e2638a671e2c614ce01960456f34a66def46df68a0dfd35afb691eae0e"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "edf2f604-4d4a-486f-a5ee-c51575ad8d95",
+				"type": "text/javascript",
+				"exec": [
+					"let privateKey = pm.environment.get('private_key')",
+					"if (!privateKey) {",
+					"    console.log(\"No private key defined, will not generate signature\")",
+					"    return",
+					"}",
+					"",
+					"privateKey = privateKey.replace(/\\//g, \"%2F\")",
+					"",
+					"pm.sendRequest('localhost:666/signature/'+privateKey, function (err, res) {",
+					"     if (err){",
+					"        console.log(\"Error: Econic Developer Tools not running\")",
+					"        return",
+					"    } ",
+					"    ",
+					"    const response = res.json()",
+					"     if (!res.signature) {",
+					"        console.log(\"Error: Econic Developer Tools replied with an error\")",
+					"    }",
+					"    ",
+					"    pm.environment.set('signature', response.signature)",
+					"})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f785732d-8538-4be4-9fb8-353465821ffc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
