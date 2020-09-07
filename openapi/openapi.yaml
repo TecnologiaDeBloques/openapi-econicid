@@ -1,16 +1,16 @@
 openapi: 3.0.0
 info:
-  version: 1.0.0
+  version: 1.2.0
   title: Econic ID API Reference
-  termsOfService: 'https://www.econicnet.com/terms/'
+  termsOfService: "https://www.econicnet.com/terms/"
   contact:
     email: devops@tecnologiadebloques.com
-    url: 'http://www.econicnet.com/contact'
+    url: "http://www.econicnet.com/contact"
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
   x-logo:
-    url: 'https://storage.googleapis.com/econic-assets/econicid_logo_white.png'
+    url: "https://storage.googleapis.com/econic-assets/econicid_logo_white.png"
   description: >
     # Introduction
 
@@ -183,7 +183,6 @@ tags:
 
       **[Currently not enabled]**
 
-      <SchemaDefinition schemaRef="#/components/schemas/Applications" />
 x-tagGroups:
   - name: Core Resources
     tags:
@@ -205,43 +204,43 @@ security:
   - oAuth: []
   - APIKey: []
 servers:
-  - url: 'https://testnet.econicid.com/'
+  - url: "https://testnet.econicid.com/"
     description: Testing environment
-  - url: 'https://www.econicid.com/'
+  - url: "https://www.econicid.com/"
     description: Production environment
 paths:
   /profiles/:
     $ref: paths/profiles@.yaml
-  '/profiles/{profile_id}':
-    $ref: 'paths/profiles@{profile_id}.yaml'
-  '/profiles/{profile_id}/requestVerification':
-    $ref: 'paths/profiles@{profile_id}@requestVerification.yaml'
-  '/profiles/{profile_id}/verify':
-    $ref: 'paths/profiles@{profile_id}@verify.yaml'
-  '/profiles/{profile_id}/authorizeOperator':
-    $ref: 'paths/profiles@{profile_id}@authorizeOperator.yaml'
-  '/profiles/{profile_id}/revokeOperator':
-    $ref: 'paths/profiles@{profile_id}@revokeOperator.yaml'
+  "/profiles/{profile_id}":
+    $ref: "paths/profiles@{profile_id}.yaml"
+  "/profiles/{profile_id}/requestVerification":
+    $ref: "paths/profiles@{profile_id}@requestVerification.yaml"
+  "/profiles/{profile_id}/verify":
+    $ref: "paths/profiles@{profile_id}@verify.yaml"
+  "/profiles/{profile_id}/authorizeOperator":
+    $ref: "paths/profiles@{profile_id}@authorizeOperator.yaml"
+  "/profiles/{profile_id}/revokeOperator":
+    $ref: "paths/profiles@{profile_id}@revokeOperator.yaml"
   /devices/:
     $ref: paths/devices@.yaml
-  '/devices/{device_id}':
-    $ref: 'paths/devices@{device_id}.yaml'
+  "/devices/{device_id}":
+    $ref: "paths/devices@{device_id}.yaml"
   /identity_proofs/:
     $ref: paths/identity_proofs@.yaml
-  '/identity_proofs/{proof_id}':
-    $ref: 'paths/identity_proofs@{proof_id}.yaml'
-  '/identity_proofs/{proof_id}/approve':
-    $ref: 'paths/identity_proofs@{proof_id}@approve.yaml'
-  '/identity_proofs/{proof_id}/reject':
-    $ref: 'paths/identity_proofs@{proof_id}@reject.yaml'
+  "/identity_proofs/{proof_id}":
+    $ref: "paths/identity_proofs@{proof_id}.yaml"
+  "/identity_proofs/{proof_id}/approve":
+    $ref: "paths/identity_proofs@{proof_id}@approve.yaml"
+  "/identity_proofs/{proof_id}/reject":
+    $ref: "paths/identity_proofs@{proof_id}@reject.yaml"
   /keys/:
     $ref: paths/keys@.yaml
-  '/keys/{key_id}':
-    $ref: 'paths/keys@{key_id}.yaml'
+  "/keys/{key_id}":
+    $ref: "paths/keys@{key_id}.yaml"
   /applications/:
     $ref: paths/applications@.yaml
-  '/applications/{application_id}':
-    $ref: 'paths/applications@{application_id}.yaml'
+  "/applications/{application_id}":
+    $ref: "paths/applications@{application_id}.yaml"
 components:
   securitySchemes:
     oAuth:
@@ -254,11 +253,11 @@ components:
       type: oauth2
       flows:
         authorizationCode:
-          tokenUrl: 'http://testnet.econicid.com/oauth2/token'
-          authorizationUrl: 'http://testnet.econicid.com/oauth2/auth'
+          tokenUrl: "http://testnet.econicid.com/oauth2/token"
+          authorizationUrl: "http://testnet.econicid.com/oauth2/auth"
           scopes:
-            'read:users': read users info
-            'write:users': modify or remove users
+            "read:users": read users info
+            "write:users": modify or remove users
     APIKey:
       description: >-
         The Econic ID API can be accessed utilizing API Keys which are based on

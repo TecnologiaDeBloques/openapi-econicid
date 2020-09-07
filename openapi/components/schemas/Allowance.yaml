@@ -1,4 +1,0 @@
-description: Amount allowed to withdraw from the account
-type: integer
-minimum: 1
-example: 420

@@ -3,7 +3,7 @@ properties:
   id:
     $ref: ./KeyID.yaml
   owner_id:
-    $ref: ./OwnerID.yaml
+    $ref: ./IDOwner.yaml
   name:
     $ref: ./KeyName.yaml
   active:

@@ -3,7 +3,7 @@ properties:
   id:
     $ref: ./DeviceID.yaml
   owner_id:
-    $ref: ./OwnerID.yaml
+    $ref: ./IDOwner.yaml
   key_id:
     $ref: ./KeyID.yaml
   name:

@@ -1,4 +1,4 @@
-name: start
+name: offset
 in: query
 description: From what object number will the pagination start
 schema:

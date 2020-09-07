@@ -1,4 +1,0 @@
-description: Amount paid
-type: integer
-minimum: 1
-example: 293

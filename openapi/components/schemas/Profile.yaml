@@ -1,17 +1,17 @@
 type: object
 properties:
   id:
-    $ref: ./ProfileID.yaml
+    $ref: ./ID.yaml
   owner_id:
-    $ref: ./OwnerID.yaml
+    $ref: ./IDOwner.yaml
   profile_type:
     $ref: ./ProfileType.yaml
   display_name:
-    $ref: ./DisplayName.yaml
+    $ref: ./ProfileDisplayName.yaml
   avatar:
-    $ref: ./Avatar.yaml
+    $ref: ./ProfileAvatar.yaml
   birthdate:
-    $ref: ./Birthdate.yaml
+    $ref: ./ProfileBirthdate.yaml
   email:
     $ref: ./Email.yaml
   phone:

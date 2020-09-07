@@ -966,7 +966,7 @@ components:
         id:
           $ref: "#/components/schemas/ProfileID"
         owner_id:
-          $ref: "#/components/schemas/OwnerID"
+          $ref: "#/components/schemas/IDOwner"
         profile_type:
           $ref: "#/components/schemas/ProfileType"
         display_name:
@@ -986,7 +986,7 @@ components:
       type: string
       minLength: 1
       example: "0xcd2a3d9f938e13cd947ec05abc7fe734df8dd826"
-    OwnerID:
+    IDOwner:
       description: Base64 encoded unique identifier of the user that owns the resource.
       type: string
       minLength: 1
@@ -1142,7 +1142,7 @@ components:
         id:
           $ref: "#/components/schemas/KeyID"
         owner_id:
-          $ref: "#/components/schemas/OwnerID"
+          $ref: "#/components/schemas/IDOwner"
         name:
           $ref: "#/components/schemas/KeyName"
         active:
@@ -1224,7 +1224,7 @@ components:
         id:
           $ref: "#/components/schemas/DeviceID"
         owner_id:
-          $ref: "#/components/schemas/OwnerID"
+          $ref: "#/components/schemas/IDOwner"
         key_id:
           $ref: "#/components/schemas/KeyID"
         name:
@@ -1365,7 +1365,7 @@ components:
       type: object
       properties:
         owner_id:
-          $ref: "#/components/schemas/OwnerID"
+          $ref: "#/components/schemas/IDOwner"
 
     Address:
       description: Unique identifier of an account to which monetary transactions are delivered.

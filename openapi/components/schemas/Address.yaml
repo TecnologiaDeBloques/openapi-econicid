@@ -1,4 +1,0 @@
-description: Unique identifier of an account to which monetary transactions are delivered.
-type: string
-minLength: 1
-example: '0xcd2a3d9f938e13cd947ec05abc7fe734df8dd826'

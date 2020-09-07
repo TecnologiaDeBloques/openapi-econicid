@@ -1,4 +1,4 @@
 type: object
 properties:
   owner_id:
-    $ref: ./OwnerID.yaml
+    $ref: ./IDOwner.yaml
