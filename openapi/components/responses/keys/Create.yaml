@@ -1,6 +1,6 @@
 type: object
 properties:
   key:
-    $ref: ../../schemas/keys/Key.yaml
+    $ref: ../../schemas/Key.yaml
   secrets:
     $ref: ../../schemas/keys/Secrets.yaml

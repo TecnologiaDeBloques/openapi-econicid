@@ -132,7 +132,7 @@ tags:
       before is automatically created.
 
 
-      <SchemaDefinition schemaRef="#/components/schemas/profiles/Profile" />
+      <SchemaDefinition schemaRef="#/components/schemas/Profile" />
   - name: Key
     description: >
       API Keys comprised of a ED25519 Key Pair and a secret known as Transaction
@@ -155,7 +155,7 @@ tags:
       It will be needed to create a new Key if you lose any of these secrets.
 
 
-      <SchemaDefinition schemaRef="#/components/schemas/keys/Key" />
+      <SchemaDefinition schemaRef="#/components/schemas/Key" />
   - name: Device
     description: >
       `Key` paired to a physical device which can receive push notifications.
@@ -164,7 +164,7 @@ tags:
       A `Device` is comprised of a `Key` and serves the same functions as a
       `Key`, but also allows for the reception of push notifications.
 
-      <SchemaDefinition schemaRef="#/components/schemas/devices/Device" />
+      <SchemaDefinition schemaRef="#/components/schemas/Device" />
   - name: Proof
     description: >
       Evidence provided by the `profile` which "provees" the identity of the
@@ -176,7 +176,7 @@ tags:
       a address proof.
 
 
-      <SchemaDefinition schemaRef="#/components/schemas/proofs/Proof" />
+      <SchemaDefinition schemaRef="#/components/schemas/Proof" />
 
 x-tagGroups:
   - name: Core Resources
