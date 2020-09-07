@@ -1,7 +1,7 @@
 get:
   tags:
     - Proofs
-  summary: List identity proofs
+  summary: List proofs
   description: >-
     Returns a list of all your identity proofs sorted chronologicaly by creation
     date.
@@ -30,9 +30,9 @@ get:
       $ref: ../components/responses/errors/ServerError.yaml
 post:
   tags:
-    - Identity Proofs
-  summary: Create an identity proof
-  description: Creates a new identity proof
+    - Proofs
+  summary: Create a proof
+  description: Creates a new proof
   operationId: createProof
   requestBody:
     content:

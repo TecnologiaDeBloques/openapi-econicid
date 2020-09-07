@@ -3,8 +3,8 @@ parameters:
 get:
   tags:
     - Proofs
-  summary: Get an identity proof
-  description: Retrieve an existing identity proof.
+  summary: Get a proof
+  description: Retrieve an existing proof.
   operationId: getProof
   responses:
     "200":
@@ -27,9 +27,9 @@ get:
       $ref: ../components/responses/errors/ServerError.yaml
 delete:
   tags:
-    - Identity Proofs
-  summary: Delete an identity proof
-  description: Delete a indentity proof
+    - Proofs
+  summary: Delete a proof
+  description: Delete a proof
   operationId: deleteProof
   responses:
     "200":
