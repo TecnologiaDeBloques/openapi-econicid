@@ -229,40 +229,8 @@ paths:
 components:
   securitySchemes:
     oAuth:
-      description: >-
-        Econic ID implements the OAuth protocol. A user can create and login to
-        his Econic ID account by utilizing an official OAuth client. After the
-        he can grant certain permissions utilizing scopes. Once he has logged in
-        successfuly, the server will return a token that can be used for
-        accessing the Econic ID API.
-      type: oauth2
-      flows:
-        authorizationCode:
-          tokenUrl: "http://testnet.econicid.com/oauth2/token"
-          authorizationUrl: "http://testnet.econicid.com/oauth2/auth"
-          scopes:
-            "read:users": read users info
-            "write:users": modify or remove users
+      $ref: "components/securitySchemes/oAuth.yaml"
     APIKey:
-      description: >-
-        The Econic ID API can be accessed utilizing API Keys which are based on
-        the Ed25519 public-key system. An API Key can be created by making a
-        request to the `create key` endpoint while utilizing a valid OAuth
-        Token. The server will return a Key pair that contains both the Public
-        Key which is the identifier of the API Key and a Private Key which is
-        used to sign requests. When utilizing an API Key for Autorization, the
-        API Key must be included in the headers. **Example** `Authorization:`
-        `ApiKey-v1 etRWGzf+AY8m6DHalxO28aTDi0PXRi7w3L4F0XKSf/Y=`
-      type: apiKey
-      in: header
-      name: Authorization
+      $ref: "components/securitySchemes/APIKey.yaml"
     Signature:
-      description: >-
-        When utilizing an API Key for Authorization, a valid signature must be
-        provided in the headers alongside the API Key. Signatures can be
-        generated utilizing the Private Key and one of our official libraries.
-        **Example** `Signature:`
-        `9a75ZaHd8ULqtZfgVounQItJ3eSqMd25IDe6tNizUJj52ZdlEBP4tjMtUhGi/q84WlrFxrbL3EuqqNitDX7KBQ==`
-      type: apiKey
-      in: header
-      name: Signature
+      $ref: "components/securitySchemes/Signature.yaml"
