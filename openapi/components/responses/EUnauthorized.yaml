@@ -2,4 +2,4 @@ description: The request lacks valid authentication credentials for the target r
 content:
   application/json:
     schema:
-      $ref: ../schemas/ErrorResponse.yaml
+      $ref: ./ErrorResponse.yaml

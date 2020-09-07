@@ -1,5 +1,0 @@
-description: The request conflicts with another request.
-content:
-  application/json:
-    schema:
-      $ref: ../schemas/ErrorResponse.yaml

@@ -8,7 +8,7 @@ get:
     - $ref: ../components/parameters/limit.yaml
     - $ref: ../components/parameters/offset.yaml
   responses:
-    '200':
+    "200":
       description: OK
       content:
         application/json:
@@ -16,16 +16,16 @@ get:
             type: array
             items:
               $ref: ../components/schemas/Profile.yaml
-    '400':
-      $ref: ../components/responses/BadRequest.yaml
-    '401':
-      $ref: ../components/responses/Unauthorized.yaml
-    '402':
-      $ref: ../components/responses/RequestFailed.yaml
-    '429':
-      $ref: ../components/responses/TooManyRequests.yaml
-    '500':
-      $ref: ../components/responses/ServerError.yaml
+    "400":
+      $ref: ../components/responses/EBadRequest.yaml
+    "401":
+      $ref: ../components/responses/EUnauthorized.yaml
+    "402":
+      $ref: ../components/responses/ERequestFailed.yaml
+    "429":
+      $ref: ../components/responses/ETooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/EServerError.yaml
 post:
   tags:
     - Profiles
@@ -36,22 +36,22 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/CreateProfileRequest.yaml
+          $ref: ../components/requestBodies/ProfileCreate.yaml
     required: true
   responses:
-    '200':
+    "200":
       description: OK
       content:
         application/json:
           schema:
             $ref: ../components/schemas/Profile.yaml
-    '400':
-      $ref: ../components/responses/BadRequest.yaml
-    '401':
-      $ref: ../components/responses/Unauthorized.yaml
-    '402':
-      $ref: ../components/responses/RequestFailed.yaml
-    '429':
-      $ref: ../components/responses/TooManyRequests.yaml
-    '500':
-      $ref: ../components/responses/ServerError.yaml
+    "400":
+      $ref: ../components/responses/EBadRequest.yaml
+    "401":
+      $ref: ../components/responses/EUnauthorized.yaml
+    "402":
+      $ref: ../components/responses/ERequestFailed.yaml
+    "429":
+      $ref: ../components/responses/ETooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/EServerError.yaml

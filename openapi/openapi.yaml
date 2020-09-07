@@ -217,10 +217,6 @@ paths:
     $ref: "paths/profiles@{profile_id}@requestVerification.yaml"
   "/profiles/{profile_id}/verify":
     $ref: "paths/profiles@{profile_id}@verify.yaml"
-  "/profiles/{profile_id}/authorizeOperator":
-    $ref: "paths/profiles@{profile_id}@authorizeOperator.yaml"
-  "/profiles/{profile_id}/revokeOperator":
-    $ref: "paths/profiles@{profile_id}@revokeOperator.yaml"
   /devices/:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":

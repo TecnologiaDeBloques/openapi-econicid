@@ -1,6 +1,0 @@
-type: object
-properties:
-  name:
-    $ref: ./KeyName.yaml
-  scopes:
-    $ref: ./KeyScopes.yaml

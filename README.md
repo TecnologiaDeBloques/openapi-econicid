@@ -226,7 +226,7 @@ post:
     '401':
       $ref: ../components/responses/AccessForbidden.yaml
     '409':
-      $ref: ../components/responses/Conflict.yaml
+      $ref: ../components/responses/EConflict.yaml
     '422':
       $ref: ../components/responses/InvalidDataError.yaml
   x-code-samples:

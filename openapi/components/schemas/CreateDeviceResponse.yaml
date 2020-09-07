@@ -1,8 +1,0 @@
-type: object
-properties:
-  device:
-    $ref: ./Device.yaml
-  key:
-    $ref: ./Key.yaml
-  secrets:
-    $ref: ./KeySecrets.yaml

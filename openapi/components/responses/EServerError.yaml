@@ -2,4 +2,4 @@ description: Something went wrong on Econic's end.
 content:
   application/json:
     schema:
-      $ref: ../schemas/ErrorResponse.yaml
+      $ref: ./ErrorResponse.yaml

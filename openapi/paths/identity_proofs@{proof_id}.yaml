@@ -7,24 +7,24 @@ get:
   description: Retrieve an existing identity proof.
   operationId: getProof
   responses:
-    '200':
+    "200":
       description: OK
       content:
         application/json:
           schema:
             $ref: ../components/schemas/IdentityProof.yaml
-    '400':
-      $ref: ../components/responses/BadRequest.yaml
-    '401':
-      $ref: ../components/responses/Unauthorized.yaml
-    '402':
-      $ref: ../components/responses/RequestFailed.yaml
-    '404':
-      $ref: ../components/responses/NotFound.yaml
-    '429':
-      $ref: ../components/responses/TooManyRequests.yaml
-    '500':
-      $ref: ../components/responses/ServerError.yaml
+    "400":
+      $ref: ../components/responses/EBadRequest.yaml
+    "401":
+      $ref: ../components/responses/EUnauthorized.yaml
+    "402":
+      $ref: ../components/responses/ERequestFailed.yaml
+    "404":
+      $ref: ../components/responses/ENotFound.yaml
+    "429":
+      $ref: ../components/responses/ETooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/EServerError.yaml
 delete:
   tags:
     - Identity Proofs
@@ -32,19 +32,19 @@ delete:
   description: Delete a indentity proof
   operationId: deleteProof
   responses:
-    '200':
+    "200":
       description: OK
-    '400':
-      $ref: ../components/responses/BadRequest.yaml
-    '401':
-      $ref: ../components/responses/Unauthorized.yaml
-    '402':
-      $ref: ../components/responses/RequestFailed.yaml
-    '404':
-      $ref: ../components/responses/NotFound.yaml
-    '409':
-      $ref: ../components/responses/Conflict.yaml
-    '429':
-      $ref: ../components/responses/TooManyRequests.yaml
-    '500':
-      $ref: ../components/responses/ServerError.yaml
+    "400":
+      $ref: ../components/responses/EBadRequest.yaml
+    "401":
+      $ref: ../components/responses/EUnauthorized.yaml
+    "402":
+      $ref: ../components/responses/ERequestFailed.yaml
+    "404":
+      $ref: ../components/responses/ENotFound.yaml
+    "409":
+      $ref: ../components/responses/EConflict.yaml
+    "429":
+      $ref: ../components/responses/ETooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/EServerError.yaml

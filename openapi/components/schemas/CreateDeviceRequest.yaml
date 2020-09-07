@@ -1,8 +1,0 @@
-type: object
-properties:
-  name:
-    $ref: ./DeviceName.yaml
-  scopes:
-    $ref: ./KeyScopes.yaml
-  notification_token:
-    $ref: ./DeviceNotificationToken.yaml

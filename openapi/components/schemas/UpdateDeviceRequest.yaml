@@ -1,6 +1,0 @@
-type: object
-properties:
-  name:
-    $ref: ./DeviceName.yaml
-  notification_token:
-    $ref: ./DeviceNotificationToken.yaml

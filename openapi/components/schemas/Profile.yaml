@@ -1,9 +1,9 @@
 type: object
 properties:
   id:
-    $ref: ./ID.yaml
+    $ref: ./ProfileID.yaml
   owner_id:
-    $ref: ./IDOwner.yaml
+    $ref: ./UserID.yaml
   profile_type:
     $ref: ./ProfileType.yaml
   display_name:
@@ -13,8 +13,8 @@ properties:
   birthdate:
     $ref: ./ProfileBirthdate.yaml
   email:
-    $ref: ./Email.yaml
+    $ref: ./ProfileEmail.yaml
   phone:
-    $ref: ./Phone.yaml
+    $ref: ./ProfilePhone.yaml
   trust_level:
-    $ref: ./TrustLevel.yaml
+    $ref: ./ProfileTrustLevel.yaml
