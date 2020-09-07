@@ -1,6 +1,6 @@
 type: object
 properties:
-  proof_id:
+  id:
     $ref: ./proofs/ID.yaml
   profile_id:
     $ref: ./profiles/ID.yaml

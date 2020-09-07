@@ -1,0 +1,4 @@
+description: Unique identifier of the Certificate Type
+type: string
+minLength: 1
+example: "0xCA01baf34b850b813D2dd44061DcCD547b310D64"

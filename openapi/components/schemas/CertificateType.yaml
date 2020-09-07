@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    $ref: ./certificateTypes/ID.yaml
+  profile_id:
+    $ref: ./profiles/ID.yaml
+  name:
+    $ref: ./certificateTypes/Name.yaml
+  description:
+    $ref: ./certificateTypes/Description.yaml
+  proof_requirements:
+    type: array
+    items:
+      $ref: ./proofs/ID.yaml

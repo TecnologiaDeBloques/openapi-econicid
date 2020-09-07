@@ -165,6 +165,10 @@ tags:
       `Key`, but also allows for the reception of push notifications.
 
       <SchemaDefinition schemaRef="#/components/schemas/Device" />
+  - name: Proof Type
+    description: >
+      Lorem Ipsum
+
   - name: Proof
     description: >
       Evidence provided by the `profile` which "provees" the identity of the
@@ -185,6 +189,7 @@ x-tagGroups:
       - Key
       - Device
       - Proof
+      - Proof Type
   - name: User Owned Resources
     tags:
       - Profiles

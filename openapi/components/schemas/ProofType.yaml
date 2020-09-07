@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    $ref: ./proofs/ID.yaml
+  profile_id:
+    $ref: ./profiles/ID.yaml
+  name:
+    $ref: ./proofTypes/Name.yaml
+  description:
+    $ref: ./proofTypes/Description.yaml
