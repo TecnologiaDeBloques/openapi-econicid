@@ -1,0 +1,4 @@
+description: User assigned name of the Key.
+type: string
+minLength: 1
+example: Test API Key

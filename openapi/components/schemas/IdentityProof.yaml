@@ -1,0 +1,20 @@
+type: object
+properties:
+  proof_id:
+    $ref: ./ProofID.yaml
+  profile_id:
+    $ref: ./ProfileID.yaml
+  type:
+    $ref: ./ProofType.yaml
+  created_at:
+    $ref: ./ProofCreatedAt.yaml
+  emission_date:
+    $ref: ./ProofEmissionDate.yaml
+  expiration_date:
+    $ref: ./ProofExpirationDate.yaml
+  status:
+    $ref: ./ProofStatus.yaml
+  url:
+    $ref: ./ProofURL.yaml
+  validator_id:
+    $ref: ./ProofValidatorID.yaml

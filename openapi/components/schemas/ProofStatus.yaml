@@ -1,0 +1,7 @@
+description: Status of the proof.
+type: string
+minLength: 1
+enum:
+  - PENDING
+  - APPROVED
+  - REJECTED

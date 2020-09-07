@@ -1,0 +1,12 @@
+description: >-
+  The Econic ID API can be accessed utilizing API Keys which are based on the
+  Ed25519 public-key system. An API Key can be created by making a request to
+  the `create key` endpoint while utilizing a valid OAuth Token. The server will
+  return a Key pair that contains both the Public Key which is the identifier of
+  the API Key and a Private Key which is used to sign requests. When utilizing
+  an API Key for Autorization, the API Key must be included in the headers.
+  **Example** `Authorization:` `ApiKey-v1
+  etRWGzf+AY8m6DHalxO28aTDi0PXRi7w3L4F0XKSf/Y=`
+type: apiKey
+in: header
+name: Authorization

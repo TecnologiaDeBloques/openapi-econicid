@@ -1,0 +1,33 @@
+parameters:
+  - $ref: ../components/parameters/profileID.yaml
+post:
+  tags:
+    - Profiles
+  summary: Verify email or phone number
+  description: >-
+    Using a verification code, associate an email or phone number to your Econic
+    Profile.
+  operationId: profileVerify
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ProfileVerifyRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ProfileVerifyResponse.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '402':
+      $ref: ../components/responses/RequestFailed.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequests.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

@@ -1,0 +1,7 @@
+name: application_id
+in: query
+description: >-
+  A filter on the list based on the application_id from the object owner. The
+  value must be a string.
+schema:
+  type: string

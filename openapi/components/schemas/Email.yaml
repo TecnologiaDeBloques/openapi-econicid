@@ -1,0 +1,4 @@
+description: Public email of the profile.
+type: string
+format: email
+example: juan@rulfo.com

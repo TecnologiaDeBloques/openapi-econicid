@@ -1,0 +1,7 @@
+name: email
+in: query
+description: >-
+  A filter on the list based on the email from the object owner. The value must
+  be a string.
+schema:
+  type: string

@@ -1,0 +1,4 @@
+description: Public facing diplay name of the profile.
+type: string
+minLength: 1
+example: Juan Rulfo

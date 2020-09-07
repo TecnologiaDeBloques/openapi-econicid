@@ -1,0 +1,4 @@
+description: 'Unique identifier of the API key, it''s the public key of the Ed25519 key pair'
+type: string
+minLength: 1
+example: SOLqeGfbG8XRHumB3QQ6zf2G3ybNDG0RiGiC1otYClQ=

@@ -1,0 +1,11 @@
+type: object
+properties:
+  success:
+    description: Was the verification successful.
+    type: boolean
+    example: true
+  destinatary:
+    description: Email or phone number that received the verification code.
+    type: string
+    format: string
+    example: '+525566668888'

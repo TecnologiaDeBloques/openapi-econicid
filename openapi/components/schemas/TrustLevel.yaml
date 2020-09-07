@@ -1,0 +1,9 @@
+description: How trusted is this profile.
+type: string
+minLength: 1
+example: FULL
+enum:
+  - NONE
+  - MARGINAL
+  - FULL
+  - ULTIMATE

@@ -1,0 +1,6 @@
+description: >-
+  Space separated list of the permissions to be assigned or revoked for the
+  operator
+type: string
+minLength: 1
+example: devices keys

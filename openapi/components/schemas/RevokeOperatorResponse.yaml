@@ -1,0 +1,6 @@
+type: object
+properties:
+  profile_id:
+    $ref: ./ProfileID.yaml
+  scopes:
+    $ref: ./AuthorizationScopes.yaml

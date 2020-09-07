@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    $ref: ./KeyID.yaml
+  owner_id:
+    $ref: ./OwnerID.yaml
+  name:
+    $ref: ./KeyName.yaml
+  active:
+    $ref: ./KeyActive.yaml
+  created:
+    $ref: ./KeyCreatedAt.yaml
+  last_used:
+    $ref: ./KeyLastUsed.yaml
+  scopes:
+    $ref: ./KeyScopes.yaml

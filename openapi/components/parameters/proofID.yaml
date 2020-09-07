@@ -1,0 +1,6 @@
+name: proof_id
+in: path
+description: The unique identifier of the proof
+required: true
+schema:
+  type: string

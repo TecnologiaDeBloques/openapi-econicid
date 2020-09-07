@@ -1,0 +1,59 @@
+get:
+  tags:
+    - Identity Proofs
+  summary: List identity proofs
+  description: >-
+    Returns a list of all your identity proofs sorted chronologicaly by creation
+    date.
+  operationId: listProofs
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/IdentityProof.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '402':
+      $ref: ../components/responses/RequestFailed.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequests.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml
+post:
+  tags:
+    - Identity Proofs
+  summary: Create an identity proof
+  description: Creates a new identity proof
+  operationId: createProof
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CreateProofRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IdentityProof.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '402':
+      $ref: ../components/responses/RequestFailed.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequests.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

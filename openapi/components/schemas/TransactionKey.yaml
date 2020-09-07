@@ -1,0 +1,4 @@
+description: Key utilized to authorize monetary transactions
+type: string
+minLength: 1
+example: AJ4538ynj2X0U9AVWt89HLWyHSdthGGClPnVQ0LFzs0=

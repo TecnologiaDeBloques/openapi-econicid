@@ -1,0 +1,4 @@
+description: Last time the key was utilized.
+type: string
+format: date
+minLength: 1

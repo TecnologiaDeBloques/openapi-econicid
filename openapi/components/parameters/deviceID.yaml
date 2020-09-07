@@ -1,0 +1,6 @@
+name: device_id
+in: path
+description: The unique identifier of the device
+required: true
+schema:
+  type: string

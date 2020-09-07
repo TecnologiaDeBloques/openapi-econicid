@@ -1,0 +1,4 @@
+description: Key creation date.
+type: string
+format: date
+minLength: 1

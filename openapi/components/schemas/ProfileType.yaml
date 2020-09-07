@@ -1,0 +1,9 @@
+description: >-
+  The type of profile. Personal profiles are for humans, while business profiles
+  are for an organization or business.
+type: string
+minLength: 1
+example: PERSONAL
+enum:
+  - PERSONAL
+  - BUSINESS

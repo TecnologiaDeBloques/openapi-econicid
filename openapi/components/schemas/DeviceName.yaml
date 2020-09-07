@@ -1,0 +1,4 @@
+description: User assigned name of the Device.
+type: string
+minLength: 1
+example: My iPhone

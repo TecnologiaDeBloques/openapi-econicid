@@ -1,0 +1,31 @@
+parameters:
+  - $ref: ../components/parameters/proofID.yaml
+post:
+  tags:
+    - Identity Proofs
+  summary: Reject a Proof
+  description: Reject a proof as invalid
+  operationId: rejectProof
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RejectProofRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IdentityProof.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '402':
+      $ref: ../components/responses/RequestFailed.yaml
+    '429':
+      $ref: ../components/responses/TooManyRequests.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

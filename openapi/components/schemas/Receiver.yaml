@@ -1,0 +1,3 @@
+description: The profile unique identifier of the recepient
+type: string
+example: thanos

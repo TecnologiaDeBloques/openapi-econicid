@@ -1,0 +1,284 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Econic ID API Reference
+  termsOfService: 'https://www.econicnet.com/terms/'
+  contact:
+    email: devops@tecnologiadebloques.com
+    url: 'http://www.econicnet.com/contact'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  x-logo:
+    url: 'https://storage.googleapis.com/econic-assets/econicid_logo_white.png'
+  description: >
+    # Introduction
+
+    Econic ID is an *authentication* and *authorization* system which at its
+    core it allows users to manage their digital identities, 
+
+    by allowing them to upload proofs, such as government issued IDs, that prove
+    beyond doubt that they are the person who they claim to be;
+
+    sharing those proofs with third parties; and creating digital credentials. 
+
+
+    The Econic ID API implements the OAuth 2 protocol and is built on HTTP
+    around REST and resource oriented URLs. 
+
+    It accepts requests bodies and returns responses encoded in JSON. Standard
+    HTTP response codes and verbs are used. 
+
+
+    # Enviroments
+
+    All the Econic products have a public sandbox environment, known as testnet,
+    for demo and testing purposes. Each environment has 
+
+    its own accounts and objects, so you will need to create a separate Econic
+    ID account for the testnet environment.
+
+
+    # Authentication
+
+    Econic ID implements the OAuth 2.0 protocol, and thus supports two forms of
+    authentication
+
+    - OAuth2 tokens 
+
+    - API Keys
+
+
+    OAuth2 tokens are obtained after creating an account, or loging in though
+    our OAuth2 form with your user credentials.
+
+    For security reasons, these tokens expire every 1 hour. API Keys are created
+    and managed though this API, while using an OAuth token as authentication.
+
+
+    Once a user has created a Econic ID account it is recommended that he
+    creates an API key to allow him access without the need for his
+    credentials. 
+
+    As a general rule, you should only use OAuth2 tokens when creating an
+    account, or if your integration doesn't allow secure storage of the API
+    Keys. 
+
+
+    # Getting Started
+
+    We recomend you use [Postman](https://www.postman.com/) while getting
+    familiar with the API. Once you have requested access, you will be provided
+    with 
+
+    an OAuth2 client credentials, so you can create your Econic ID account
+    though Postman or a OAuth2 library. 
+
+
+    The first thing you want to do after creating your account, is to create a
+    pair of API Keys. This is done though a `Create Key` action in the `Keys`
+    resource.
+
+    After creating the resource, the server will return to you the `Public Key`,
+    the `Private Key` and the `Transaction Key` of your newly created `API
+    Keys`. 
+
+    It is very important you save the `Private Key` as this is only returned
+    during the key creating and can't be recovered. If you lose it, you will
+    need to
+
+    create new `Keys`. 
+
+
+    Once you have created your API Key, you can sign future requests using the
+    `Private Key` you saved previously. While signatures can be created in any
+    programming language,
+
+    for convinience we recommend you use our [developer
+    toolkit](https://github.com/TecnologiaDeBloques/node-developer-toolkit).
+    This will generate the signature, and if you
+
+    are using Postman it will automatically add it to the request header.
+
+
+    After this, you are free to explore the API and its different resources.
+tags:
+  - name: Profile
+    description: >
+      Defined as an actor in the system, there can be two types of profiles:
+      Personal (representing a human) and business (representing an
+      organization).
+
+
+      When you create an Econic ID account, you create a `user` which is an
+      internal resource of the system that is associated with your login
+      credentials,
+
+      and a personal `profile`. This personal `profile` represents you as an
+      individual, but since you may want to act as an organization you can
+      create a 
+
+      separate `profile` know as a business `profile`.
+
+
+      Most resources are owned by `profiles` instead of `users`, so this way you
+      can separate your personal account from your business account while not
+      having to 
+
+      create multiple Econic ID accounts and to manage multiple credentials.
+
+
+      A `user` can only have a single personal `profile`, which as mentioned
+      before is automatically created.
+
+
+      <SchemaDefinition schemaRef="#/components/schemas/Profile" />
+  - name: Key
+    description: >
+      API Keys comprised of a ED25519 Key Pair and a secret known as Transaction
+      Key. 
+
+
+      `Keys` allow `users` to authenticate and to authorize requests in all
+      Econic systems. The ED25519 key pair its utilized for signing requests,
+      while the Transaction Key must be 
+
+      added as well when authorizing transactions. After creation, the Ed25519
+      Public Key is stored in our server, and the Private Key is sent alongside
+      the Transaction Key back the client. 
+
+
+      You must save the Private Key and the Transaction Key after creation, as
+      both are unrecoverable and only sent as a response during the key
+      creation. 
+
+      It will be needed to create a new Key if you lose any of these secrets.
+
+
+      <SchemaDefinition schemaRef="#/components/schemas/Key" />
+  - name: Device
+    description: >
+      `Key` paired to a physical device which can receive push notifications.
+
+
+      A `Device` is comprised of a `Key` and serves the same functions as a
+      `Key`, but also allows for the reception of push notifications.
+
+      <SchemaDefinition schemaRef="#/components/schemas/Device" />
+  - name: Identity Proof
+    description: >
+      Evidence provided by the `profile` which "provees" the identity of the
+      legal person it represents.
+
+
+      Identity Proofs are as the name suggest, allow the `profile` to build a
+      digital identity by registering things such as a government issued ID, or
+      a address proof.
+
+
+      <SchemaDefinition schemaRef="#/components/schemas/IdentityProof" />
+  - name: Application
+    description: |
+      Allow the integration of Econic ID by registering a new OAuth2 client.
+
+      **[Currently not enabled]**
+
+      <SchemaDefinition schemaRef="#/components/schemas/Applications" />
+x-tagGroups:
+  - name: Core Resources
+    tags:
+      - Profile
+      - Key
+      - Device
+      - Identity Proof
+      - Application
+  - name: User Owned Resources
+    tags:
+      - Profiles
+      - Keys
+      - Devices
+  - name: Profile Owned Resources
+    tags:
+      - Identity Proofs
+      - Applications
+security:
+  - oAuth: []
+  - APIKey: []
+servers:
+  - url: 'https://testnet.econicid.com/'
+    description: Testing environment
+  - url: 'https://www.econicid.com/'
+    description: Production environment
+paths:
+  /profiles/:
+    $ref: paths/profiles@.yaml
+  '/profiles/{profile_id}':
+    $ref: 'paths/profiles@{profile_id}.yaml'
+  '/profiles/{profile_id}/requestVerification':
+    $ref: 'paths/profiles@{profile_id}@requestVerification.yaml'
+  '/profiles/{profile_id}/verify':
+    $ref: 'paths/profiles@{profile_id}@verify.yaml'
+  '/profiles/{profile_id}/authorizeOperator':
+    $ref: 'paths/profiles@{profile_id}@authorizeOperator.yaml'
+  '/profiles/{profile_id}/revokeOperator':
+    $ref: 'paths/profiles@{profile_id}@revokeOperator.yaml'
+  /devices/:
+    $ref: paths/devices@.yaml
+  '/devices/{device_id}':
+    $ref: 'paths/devices@{device_id}.yaml'
+  /identity_proofs/:
+    $ref: paths/identity_proofs@.yaml
+  '/identity_proofs/{proof_id}':
+    $ref: 'paths/identity_proofs@{proof_id}.yaml'
+  '/identity_proofs/{proof_id}/approve':
+    $ref: 'paths/identity_proofs@{proof_id}@approve.yaml'
+  '/identity_proofs/{proof_id}/reject':
+    $ref: 'paths/identity_proofs@{proof_id}@reject.yaml'
+  /keys/:
+    $ref: paths/keys@.yaml
+  '/keys/{key_id}':
+    $ref: 'paths/keys@{key_id}.yaml'
+  /applications/:
+    $ref: paths/applications@.yaml
+  '/applications/{application_id}':
+    $ref: 'paths/applications@{application_id}.yaml'
+components:
+  securitySchemes:
+    oAuth:
+      description: >-
+        Econic ID implements the OAuth protocol. A user can create and login to
+        his Econic ID account by utilizing an official OAuth client. After the
+        he can grant certain permissions utilizing scopes. Once he has logged in
+        successfuly, the server will return a token that can be used for
+        accessing the Econic ID API.
+      type: oauth2
+      flows:
+        authorizationCode:
+          tokenUrl: 'http://testnet.econicid.com/oauth2/token'
+          authorizationUrl: 'http://testnet.econicid.com/oauth2/auth'
+          scopes:
+            'read:users': read users info
+            'write:users': modify or remove users
+    APIKey:
+      description: >-
+        The Econic ID API can be accessed utilizing API Keys which are based on
+        the Ed25519 public-key system. An API Key can be created by making a
+        request to the `create key` endpoint while utilizing a valid OAuth
+        Token. The server will return a Key pair that contains both the Public
+        Key which is the identifier of the API Key and a Private Key which is
+        used to sign requests. When utilizing an API Key for Autorization, the
+        API Key must be included in the headers. **Example** `Authorization:`
+        `ApiKey-v1 etRWGzf+AY8m6DHalxO28aTDi0PXRi7w3L4F0XKSf/Y=`
+      type: apiKey
+      in: header
+      name: Authorization
+    Signature:
+      description: >-
+        When utilizing an API Key for Authorization, a valid signature must be
+        provided in the headers alongside the API Key. Signatures can be
+        generated utilizing the Private Key and one of our official libraries.
+        **Example** `Signature:`
+        `9a75ZaHd8ULqtZfgVounQItJ3eSqMd25IDe6tNizUJj52ZdlEBP4tjMtUhGi/q84WlrFxrbL3EuqqNitDX7KBQ==`
+      type: apiKey
+      in: header
+      name: Signature

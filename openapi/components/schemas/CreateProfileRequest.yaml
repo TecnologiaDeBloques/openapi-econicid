@@ -1,0 +1,10 @@
+type: object
+properties:
+  type:
+    $ref: ./ProfileType.yaml
+  display_name:
+    $ref: ./DisplayName.yaml
+  avatar:
+    $ref: ./Avatar.yaml
+  birthdate:
+    $ref: ./Birthdate.yaml

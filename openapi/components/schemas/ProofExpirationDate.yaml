@@ -1,0 +1,4 @@
+description: When the submitted proof is going to expire.
+type: string
+format: date
+minLength: 1

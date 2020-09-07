@@ -1,0 +1,5 @@
+description: Ed25519 Private Key utilized to sign transactions
+type: string
+minLength: 1
+example: >-
+  zVVlZ+eaaVHgzBXdsS9C1UwBTuJOyKMNKe5vHEL3Uw4ItepzfOB2SQyhB0wyN+ql+Wu0EnQksr07c68Y6zTaRw==

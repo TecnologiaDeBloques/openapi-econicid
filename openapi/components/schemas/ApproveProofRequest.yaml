@@ -1,0 +1,4 @@
+type: object
+properties:
+  validator_id:
+    $ref: ./ProofValidatorID.yaml

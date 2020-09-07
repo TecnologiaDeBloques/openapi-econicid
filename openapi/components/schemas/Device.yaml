@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    $ref: ./DeviceID.yaml
+  owner_id:
+    $ref: ./OwnerID.yaml
+  key_id:
+    $ref: ./KeyID.yaml
+  name:
+    $ref: ./DeviceName.yaml
+  notification_token:
+    $ref: ./DeviceNotificationToken.yaml

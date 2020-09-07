@@ -1,0 +1,4 @@
+description: Base64 encoded unique identifier of the user that owns the resource.
+type: string
+minLength: 1
+example: b57665d54f77faa8ea3b8588c590b5acf1c29a2008fbede8b770d8ddbf5d54d1

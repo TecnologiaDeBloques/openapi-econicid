@@ -1,0 +1,3 @@
+description: Extra data appended to the transaction
+type: string
+example: '{ sender: "tecdebloques"}'
