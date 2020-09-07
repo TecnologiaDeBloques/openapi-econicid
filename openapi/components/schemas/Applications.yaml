@@ -1,4 +1,0 @@
-type: object
-properties:
-  owner_id:
-    $ref: ./UserID.yaml

@@ -1,6 +1,0 @@
-name: application_id
-in: path
-description: The unique identifier of the application
-required: true
-schema:
-  type: string

@@ -165,7 +165,7 @@ tags:
       `Key`, but also allows for the reception of push notifications.
 
       <SchemaDefinition schemaRef="#/components/schemas/Device" />
-  - name: Identity Proof
+  - name: Proof
     description: >
       Evidence provided by the `profile` which "provees" the identity of the
       legal person it represents.
@@ -176,12 +176,7 @@ tags:
       a address proof.
 
 
-      <SchemaDefinition schemaRef="#/components/schemas/IdentityProof" />
-  - name: Application
-    description: |
-      Allow the integration of Econic ID by registering a new OAuth2 client.
-
-      **[Currently not enabled]**
+      <SchemaDefinition schemaRef="#/components/schemas/Proof" />
 
 x-tagGroups:
   - name: Core Resources
@@ -189,8 +184,7 @@ x-tagGroups:
       - Profile
       - Key
       - Device
-      - Identity Proof
-      - Application
+      - Proof
   - name: User Owned Resources
     tags:
       - Profiles
@@ -198,8 +192,7 @@ x-tagGroups:
       - Devices
   - name: Profile Owned Resources
     tags:
-      - Identity Proofs
-      - Applications
+      - Proofs
 security:
   - oAuth: []
   - APIKey: []
@@ -221,22 +214,18 @@ paths:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":
     $ref: "paths/devices@{device_id}.yaml"
-  /identity_proofs/:
-    $ref: paths/identity_proofs@.yaml
-  "/identity_proofs/{proof_id}":
-    $ref: "paths/identity_proofs@{proof_id}.yaml"
-  "/identity_proofs/{proof_id}/approve":
-    $ref: "paths/identity_proofs@{proof_id}@approve.yaml"
-  "/identity_proofs/{proof_id}/reject":
-    $ref: "paths/identity_proofs@{proof_id}@reject.yaml"
+  /proofs/:
+    $ref: paths/proofs@.yaml
+  "/proofs/{proof_id}":
+    $ref: "paths/proofs@{proof_id}.yaml"
+  "/proofs/{proof_id}/approve":
+    $ref: "paths/proofs@{proof_id}@approve.yaml"
+  "/proofs/{proof_id}/reject":
+    $ref: "paths/proofs@{proof_id}@reject.yaml"
   /keys/:
     $ref: paths/keys@.yaml
   "/keys/{key_id}":
     $ref: "paths/keys@{key_id}.yaml"
-  /applications/:
-    $ref: paths/applications@.yaml
-  "/applications/{application_id}":
-    $ref: "paths/applications@{application_id}.yaml"
 components:
   securitySchemes:
     oAuth:

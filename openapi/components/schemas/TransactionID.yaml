@@ -1,4 +1,0 @@
-description: Unique identifier of the transaction.
-type: string
-minLength: 1
-example: d773cd4dc21975c3f3fec70bcf6e4b43463ce7c53050681f106790036cc6d8be

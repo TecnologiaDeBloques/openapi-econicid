@@ -1,4 +1,0 @@
-description: The status of the transaction
-type: string
-minLength: 1
-example: Success

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Identity Proofs
+    - Proofs
   summary: List identity proofs
   description: >-
     Returns a list of all your identity proofs sorted chronologicaly by creation
@@ -17,7 +17,7 @@ get:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/IdentityProof.yaml
+              $ref: ../components/schemas/Proof.yaml
     "400":
       $ref: ../components/responses/EBadRequest.yaml
     "401":
@@ -46,7 +46,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/IdentityProof.yaml
+            $ref: ../components/schemas/Proof.yaml
     "400":
       $ref: ../components/responses/EBadRequest.yaml
     "401":

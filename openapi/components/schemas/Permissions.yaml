@@ -1,4 +1,0 @@
-description: 'The authorization level, can be `read-only` or `full-access`.'
-type: string
-minLength: 1
-example: read-only

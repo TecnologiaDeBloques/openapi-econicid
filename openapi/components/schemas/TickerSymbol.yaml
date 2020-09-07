@@ -1,8 +1,0 @@
-description: >-
-  Abbreviation userd to uniquely identify a particular currency. It is composed
-  by 3 characters denoting the emitting institution followed by a hyphen and 3
-  chacters with the currency code
-type: string
-minLength: 7
-maxLength: 7
-example: CAO-MXN

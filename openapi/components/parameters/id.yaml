@@ -1,6 +1,0 @@
-name: id
-in: path
-description: The unique identifier of the resource
-required: true
-schema:
-  type: string

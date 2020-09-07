@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/profileID.yaml
+  - $ref: ../components/parameters/ProfileID.yaml
 post:
   tags:
     - Profiles

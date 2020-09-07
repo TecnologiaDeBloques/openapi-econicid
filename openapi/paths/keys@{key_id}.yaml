@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/keyID.yaml
+  - $ref: ../components/parameters/KeyID.yaml
 get:
   tags:
     - Keys

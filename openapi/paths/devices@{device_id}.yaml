@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/deviceID.yaml
+  - $ref: ../components/parameters/DeviceID.yaml
 get:
   tags:
     - Devices

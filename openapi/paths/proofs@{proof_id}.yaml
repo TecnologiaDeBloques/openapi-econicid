@@ -1,58 +1,49 @@
+parameters:
+  - $ref: ../components/parameters/ProofID.yaml
 get:
   tags:
-    - Applications
-  summary: List Applications
-  description: >-
-    Returns a list of all your applications sorted chronologicaly by creation
-    date.
-  operationId: listApplications
-  parameters:
-    - $ref: ../components/parameters/limit.yaml
-    - $ref: ../components/parameters/offset.yaml
+    - Proofs
+  summary: Get an identity proof
+  description: Retrieve an existing identity proof.
+  operationId: getProof
   responses:
     "200":
       description: OK
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: ../components/schemas/Temporal.yaml
+            $ref: ../components/schemas/Proof.yaml
     "400":
       $ref: ../components/responses/EBadRequest.yaml
     "401":
       $ref: ../components/responses/EUnauthorized.yaml
     "402":
       $ref: ../components/responses/ERequestFailed.yaml
+    "404":
+      $ref: ../components/responses/ENotFound.yaml
     "429":
       $ref: ../components/responses/ETooManyRequests.yaml
     "500":
       $ref: ../components/responses/EServerError.yaml
-post:
+delete:
   tags:
-    - Applications
-  summary: Create an application
-  description: Creates a new application
-  operationId: createApplication
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: ../components/schemas/Temporal.yaml
-    required: true
+    - Identity Proofs
+  summary: Delete an identity proof
+  description: Delete a indentity proof
+  operationId: deleteProof
   responses:
     "200":
       description: OK
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/Temporal.yaml
     "400":
       $ref: ../components/responses/EBadRequest.yaml
     "401":
       $ref: ../components/responses/EUnauthorized.yaml
     "402":
       $ref: ../components/responses/ERequestFailed.yaml
+    "404":
+      $ref: ../components/responses/ENotFound.yaml
+    "409":
+      $ref: ../components/responses/EConflict.yaml
     "429":
       $ref: ../components/responses/ETooManyRequests.yaml
     "500":

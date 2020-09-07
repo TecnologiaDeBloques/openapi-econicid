@@ -1,11 +1,11 @@
 parameters:
-  - $ref: ../components/parameters/proofID.yaml
+  - $ref: ../components/parameters/ProofID.yaml
 post:
   tags:
-    - Identity Proofs
-  summary: Approve Proof
-  description: Mark a proof as valid
-  operationId: approveProof
+    - Proofs
+  summary: Reject a Proof
+  description: Reject a proof as invalid
+  operationId: rejectProof
   requestBody:
     content:
       application/json:
@@ -18,7 +18,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/IdentityProof.yaml
+            $ref: ../components/schemas/Proof.yaml
     "400":
       $ref: ../components/responses/EBadRequest.yaml
     "401":
