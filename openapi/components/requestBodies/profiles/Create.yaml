@@ -1,0 +1,10 @@
+type: object
+properties:
+  type:
+    $ref: ../../schemas/profiles/Type.yaml
+  display_name:
+    $ref: ../../schemas/profiles/DisplayName.yaml
+  avatar:
+    $ref: ../../schemas/profiles/Avatar.yaml
+  birthdate:
+    $ref: ../../schemas/profiles/Birthdate.yaml

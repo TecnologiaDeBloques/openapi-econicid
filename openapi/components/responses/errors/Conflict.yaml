@@ -1,0 +1,5 @@
+description: The request errors/Conflicts with another request.
+content:
+  application/json:
+    schema:
+      $ref: ./Error.yaml

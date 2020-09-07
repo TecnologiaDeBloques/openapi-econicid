@@ -1,0 +1,6 @@
+type: object
+properties:
+  name:
+    $ref: ../../schemas/devices/Name.yaml
+  notification_token:
+    $ref: ../../schemas/devices/NotificationToken.yaml

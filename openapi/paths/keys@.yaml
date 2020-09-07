@@ -15,17 +15,17 @@ get:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/Key.yaml
+              $ref: ../components/schemas/keys/Key.yaml
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml
 post:
   tags:
     - Keys
@@ -36,7 +36,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/requestBodies/KeyCreate.yaml
+          $ref: ../components/requestBodies/keys/Create.yaml
     required: true
   responses:
     "200":
@@ -44,14 +44,14 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/responses/KeyCreate.yaml
+            $ref: ../components/responses/keys/Create.yaml
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml

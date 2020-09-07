@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/KeyID.yaml
+  - $ref: ../components/parameters/ids/Key.yaml
 get:
   tags:
     - Keys
@@ -12,19 +12,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Key.yaml
+            $ref: ../components/schemas/keys/Key.yaml
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "404":
-      $ref: ../components/responses/ENotFound.yaml
+      $ref: ../components/responses/errors/NotFound.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml
 delete:
   tags:
     - Keys
@@ -35,16 +35,16 @@ delete:
     "200":
       description: OK
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "404":
-      $ref: ../components/responses/ENotFound.yaml
+      $ref: ../components/responses/errors/NotFound.yaml
     "409":
-      $ref: ../components/responses/EConflict.yaml
+      $ref: ../components/responses/errors/Conflict.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml

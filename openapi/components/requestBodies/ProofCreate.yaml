@@ -1,8 +1,0 @@
-type: object
-properties:
-  profile_id:
-    $ref: ../schemas/ProfileID.yaml
-  emission_date:
-    $ref: ../schemas/ProofEmissionDate.yaml
-  expiration_date:
-    $ref: ../schemas/ProofExpirationDate.yaml

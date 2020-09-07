@@ -1,5 +1,0 @@
-description: The request EConflicts with another request.
-content:
-  application/json:
-    schema:
-      $ref: ./ErrorResponse.yaml

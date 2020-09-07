@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/ProfileID.yaml
+  - $ref: ../components/parameters/ids/Profile.yaml
 get:
   tags:
     - Profiles
@@ -12,19 +12,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Profile.yaml
+            $ref: ../components/schemas/profiles/Profile.yaml
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "404":
-      $ref: ../components/responses/ENotFound.yaml
+      $ref: ../components/responses/errors/NotFound.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml
 put:
   tags:
     - Profiles
@@ -35,7 +35,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: ../components/requestBodies/ProfileUpdate.yaml
+          $ref: ../components/requestBodies/profiles/Update.yaml
     required: true
   responses:
     "200":
@@ -43,21 +43,21 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Profile.yaml
+            $ref: ../components/schemas/profiles/Profile.yaml
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "404":
-      $ref: ../components/responses/ENotFound.yaml
+      $ref: ../components/responses/errors/NotFound.yaml
     "409":
-      $ref: ../components/responses/EConflict.yaml
+      $ref: ../components/responses/errors/Conflict.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml
 delete:
   tags:
     - Profiles
@@ -68,16 +68,16 @@ delete:
     "200":
       description: OK
     "400":
-      $ref: ../components/responses/EBadRequest.yaml
+      $ref: ../components/responses/errors/BadRequest.yaml
     "401":
-      $ref: ../components/responses/EUnauthorized.yaml
+      $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
-      $ref: ../components/responses/ERequestFailed.yaml
+      $ref: ../components/responses/errors/RequestFailed.yaml
     "404":
-      $ref: ../components/responses/ENotFound.yaml
+      $ref: ../components/responses/errors/NotFound.yaml
     "409":
-      $ref: ../components/responses/EConflict.yaml
+      $ref: ../components/responses/errors/Conflict.yaml
     "429":
-      $ref: ../components/responses/ETooManyRequests.yaml
+      $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
-      $ref: ../components/responses/EServerError.yaml
+      $ref: ../components/responses/errors/ServerError.yaml

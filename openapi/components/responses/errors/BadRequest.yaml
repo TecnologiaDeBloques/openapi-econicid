@@ -4,4 +4,4 @@ description: >-
 content:
   application/json:
     schema:
-      $ref: ./ErrorResponse.yaml
+      $ref: ./Error.yaml

@@ -2,4 +2,4 @@ description: The request was valid but it failed.
 content:
   application/json:
     schema:
-      $ref: ./ErrorResponse.yaml
+      $ref: ./Error.yaml
