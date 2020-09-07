@@ -1,4 +1,0 @@
-description: Unique identifier of the proof validator.
-type: string
-minLength: 1
-example: b2aea9538714f00227c33f6a4c615aa708555dee88f5a59381745255d648c7cf

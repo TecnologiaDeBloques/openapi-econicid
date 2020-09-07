@@ -16,5 +16,7 @@ properties:
     $ref: ./ProfileEmail.yaml
   phone:
     $ref: ./ProfilePhone.yaml
+  gender:
+    $ref: ./ProfileGender.yaml
   trust_level:
     $ref: ./ProfileTrustLevel.yaml

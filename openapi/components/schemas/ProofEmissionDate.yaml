@@ -1,4 +1,4 @@
-description: When the submitted proof was emitted by the authority.
+description: The date for when the proof was emited.
 type: string
 format: date
 minLength: 1

@@ -1,4 +1,4 @@
-description: Public email of the profile.
+description: Verified email of the profile.
 type: string
 format: email
-example: juan@rulfo.com
+example: duchess@cia.com

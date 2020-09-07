@@ -4,17 +4,17 @@ properties:
     $ref: ./ProofID.yaml
   profile_id:
     $ref: ./ProfileID.yaml
-  type:
-    $ref: ./ProofType.yaml
-  created_at:
-    $ref: ./ProofCreatedAt.yaml
+  proof_type_id:
+    $ref: ./ProfileID.yaml
   emission_date:
     $ref: ./ProofEmissionDate.yaml
   expiration_date:
     $ref: ./ProofExpirationDate.yaml
   status:
     $ref: ./ProofStatus.yaml
-  url:
-    $ref: ./ProofURL.yaml
-  validator_id:
-    $ref: ./ProofValidatorID.yaml
+  file_url:
+    $ref: ./ProofFileURL.yaml
+  verificator_id:
+    $ref: ./ProofVerificatorID.yaml
+  data:
+    $ref: ./Data.yaml

@@ -1,0 +1,4 @@
+description: Hex unique identifier a Proof Type
+type: string
+minLength: 1
+example: "0x791Afb89f3EB4dBC9b20D861CBc9B1AbC35EBc12"

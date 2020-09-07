@@ -1,0 +1,3 @@
+description: JSON encoded object that allows adding extra information to the resource.
+type: string
+example: '{ company: "tecdebloques"}'

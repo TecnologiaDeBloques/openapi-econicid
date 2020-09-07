@@ -1,4 +1,4 @@
 type: object
 properties:
   validator_id:
-    $ref: ../schemas/ProofValidatorID.yaml
+    $ref: ../schemas/ProofVerificatorID.yaml

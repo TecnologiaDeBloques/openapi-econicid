@@ -1,4 +1,0 @@
-description: Proof creation date.
-type: string
-format: date
-minLength: 1
