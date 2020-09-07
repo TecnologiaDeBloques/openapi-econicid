@@ -2,10 +2,10 @@ openapi: 3.0.0
 info:
   version: 1.2.0
   title: Econic ID API Reference
-  termsOfService: "https://www.econicnet.com/terms/"
+  termsOfService: "https://www.econicapp.com/terms/"
   contact:
     email: devops@tecnologiadebloques.com
-    url: "http://www.econicnet.com/contact"
+    url: "http://www.econicapp.com/"
   license:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
