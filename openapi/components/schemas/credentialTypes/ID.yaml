@@ -1,4 +1,4 @@
 description: Hex encoded unique identifier of the Certificate Type
 type: string
 minLength: 1
-example: "0xA7A698535983eEABB57B3734fa5432C8531D8A19"
+example: "0xCA7bBFa60AF11e87aAFb55e6D072899b111016be"

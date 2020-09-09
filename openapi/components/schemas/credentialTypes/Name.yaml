@@ -1,4 +1,4 @@
 description: Name of the Certificate Type.
 type: string
 minLength: 1
-example: BAD GUY Combat Training
+example: CIA ID

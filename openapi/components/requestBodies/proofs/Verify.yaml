@@ -1,4 +1,11 @@
 type: object
 properties:
-  validator_id:
+  verificator_id:
     $ref: ../../schemas/proofs/VerificatorID.yaml
+  new_status:
+    $ref: ../../schemas/proofs/Status.yaml
+  reason:
+    description: Motive why the proof was rejected
+    type: string
+    minLength: 1
+    example: "ID presents signs that it has been manipulated."

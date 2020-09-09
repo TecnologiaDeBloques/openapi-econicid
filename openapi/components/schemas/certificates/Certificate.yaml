@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    $ref: ./ID.yaml
+  profile_id:
+    $ref: ../profiles/ID.yaml
+  certificate_type_id:
+    $ref: ../certificateTypes/ID.yaml
+  emissor_id:
+    $ref: ./EmissorID.yaml
+  emission_date:
+    $ref: ./EmissionDate.yaml
+  expiration_date:
+    $ref: ./ExpirationDate.yaml
+  status:
+    $ref: ./Status.yaml
+  data:
+    $ref: ../shared/Data.yaml

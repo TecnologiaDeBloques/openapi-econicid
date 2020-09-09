@@ -1,0 +1,6 @@
+description: Status of the certificate
+type: string
+minLength: 1
+enum:
+  - EMITTED
+  - REVOKED

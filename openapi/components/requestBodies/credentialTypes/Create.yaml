@@ -1,0 +1,12 @@
+type: object
+properties:
+  profile_id:
+    $ref: ../../schemas/profiles/ID.yaml
+  name:
+    $ref: ../../schemas/credentialTypes/Name.yaml
+  description:
+    $ref: ../../schemas/credentialTypes/Description.yaml
+  proof_requirements:
+    type: array
+    items:
+      $ref: ../../schemas/proofs/ID.yaml

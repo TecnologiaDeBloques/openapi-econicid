@@ -180,8 +180,27 @@ tags:
       digital identity by registering things such as a government issued ID, or
       a address proof.
 
-
       <SchemaDefinition schemaRef="#/components/schemas/Proof" />
+  - name: Certificate Type
+    description: >
+      Lorem Ipsum
+
+      <SchemaDefinition schemaRef="#/components/schemas/CertificateType" />
+  - name: Certificate
+    description: >
+      Lorem Ipsum
+
+      <SchemaDefinition schemaRef="#/components/schemas/Certificate" />
+  - name: Credential Type
+    description: >
+      Lorem Ipsum
+
+      <SchemaDefinition schemaRef="#/components/schemas/CredentialType" />
+  - name: Credential
+    description: >
+      Lorem Ipsum
+
+      <SchemaDefinition schemaRef="#/components/schemas/Credential" />
 
 x-tagGroups:
   - name: Core Resources
@@ -189,8 +208,12 @@ x-tagGroups:
       - Profile
       - Key
       - Device
-      - Proof
       - Proof Type
+      - Proof
+      - Certificate Type
+      - Certificate
+      - Credential Type
+      - Credential
   - name: User Owned Resources
     tags:
       - Profiles
@@ -232,14 +255,14 @@ paths:
     $ref: "paths/keys@{key_id}.yaml"
 components:
   schemas:
-    # Certificate:
-    #   $ref: components/schemas/certificates/Certificate.yaml
-    # CertificateTypes:
-    #   $ref: components/schemas/certificateTypes/CertificateType.yaml
-    # Credentials:
-    #   $ref: components/schemas/credentials/Credential.yaml
-    # CredentialTypes:
-    #   $ref: components/schemas/credentialTypes/CredentialType.yaml
+    Certificate:
+      $ref: components/schemas/certificates/Certificate.yaml
+    CertificateTypes:
+      $ref: components/schemas/certificateTypes/CertificateType.yaml
+    Credentials:
+      $ref: components/schemas/credentials/Credential.yaml
+    CredentialTypes:
+      $ref: components/schemas/credentialTypes/CredentialType.yaml
     Devices:
       $ref: components/schemas/devices/Device.yaml
     Keys:

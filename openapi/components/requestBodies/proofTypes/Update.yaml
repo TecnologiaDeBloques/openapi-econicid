@@ -1,0 +1,6 @@
+type: object
+properties:
+  name:
+    $ref: ../../schemas/proofTypes/Name.yaml
+  description:
+    $ref: ../../schemas/proofTypes/Description.yaml

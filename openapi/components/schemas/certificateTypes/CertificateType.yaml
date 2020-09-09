@@ -1,14 +1,14 @@
 type: object
 properties:
   id:
-    $ref: ./certificateTypes/ID.yaml
+    $ref: ./ID.yaml
   profile_id:
-    $ref: ./profiles/ID.yaml
+    $ref: ../profiles/ID.yaml
   name:
-    $ref: ./certificateTypes/Name.yaml
+    $ref: ./Name.yaml
   description:
-    $ref: ./certificateTypes/Description.yaml
+    $ref: ./Description.yaml
   proof_requirements:
     type: array
     items:
-      $ref: ./proofs/ID.yaml
+      $ref: ../proofs/ID.yaml

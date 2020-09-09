@@ -1,0 +1,8 @@
+type: object
+properties:
+  profile_id:
+    $ref: ../../schemas/profiles/ID.yaml
+  name:
+    $ref: ../../schemas/proofTypes/Name.yaml
+  description:
+    $ref: ../../schemas/proofTypes/Description.yaml

@@ -1,4 +1,4 @@
-description: Unique identifier of the Proof
+description: Hex encoded unique identifier of the Proof
 type: string
 minLength: 1
-example: f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b
+example: "0xDDDDD87eF86691778694C978EE1352CB6106adE6"
