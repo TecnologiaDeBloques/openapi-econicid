@@ -1,8 +1,8 @@
 type: object
 properties:
   device:
-    $ref: ../../schemas/Device.yaml
+    $ref: ../../schemas/devices/Device.yaml
   key:
-    $ref: ../../schemas/Key.yaml
+    $ref: ../../schemas/keys/Key.yaml
   secrets:
     $ref: ../../schemas/keys/Secrets.yaml

@@ -17,7 +17,7 @@ get:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/Proof.yaml
+              $ref: ../components/schemas/proofs/Proof.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":
@@ -46,7 +46,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Proof.yaml
+            $ref: ../components/schemas/proofs/Proof.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":

@@ -2,10 +2,10 @@ openapi: 3.0.0
 info:
   version: 1.2.0
   title: Econic ID API Reference
-  termsOfService: "https://www.econicapp.com/terms/"
+  termsOfService: "https://www.econicapp.com/terms"
   contact:
     email: devops@tecnologiadebloques.com
-    url: "http://www.econicapp.com/"
+    url: "http://www.econicapp.com"
   license:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -169,6 +169,7 @@ tags:
     description: >
       Lorem Ipsum
 
+      <SchemaDefinition schemaRef="#/components/schemas/ProofType" />
   - name: Proof
     description: >
       Evidence provided by the `profile` which "provees" the identity of the
@@ -202,12 +203,12 @@ security:
   - oAuth: []
   - APIKey: []
 servers:
-  - url: "https://testnet.econicid.com/"
+  - url: "https://testnet.econicid.com"
     description: Testing environment
-  - url: "https://www.econicid.com/"
+  - url: "https://www.econicid.com"
     description: Production environment
 paths:
-  /profiles/:
+  /profiles:
     $ref: paths/profiles@.yaml
   "/profiles/{profile_id}":
     $ref: "paths/profiles@{profile_id}.yaml"
@@ -215,21 +216,40 @@ paths:
     $ref: "paths/profiles@{profile_id}@requestVerification.yaml"
   "/profiles/{profile_id}/verify":
     $ref: "paths/profiles@{profile_id}@verify.yaml"
-  /devices/:
+  /devices:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":
     $ref: "paths/devices@{device_id}.yaml"
-  /proofs/:
+  /proofs:
     $ref: paths/proofs@.yaml
   "/proofs/{proof_id}":
     $ref: "paths/proofs@{proof_id}.yaml"
   "/proofs/{proof_id}/verify":
     $ref: "paths/proofs@{proof_id}@verify.yaml"
-  /keys/:
+  /keys:
     $ref: paths/keys@.yaml
   "/keys/{key_id}":
     $ref: "paths/keys@{key_id}.yaml"
 components:
+  schemas:
+    # Certificate:
+    #   $ref: components/schemas/certificates/Certificate.yaml
+    # CertificateTypes:
+    #   $ref: components/schemas/certificateTypes/CertificateType.yaml
+    # Credentials:
+    #   $ref: components/schemas/credentials/Credential.yaml
+    # CredentialTypes:
+    #   $ref: components/schemas/credentialTypes/CredentialType.yaml
+    Devices:
+      $ref: components/schemas/devices/Device.yaml
+    Keys:
+      $ref: components/schemas/keys/Key.yaml
+    Profiles:
+      $ref: components/schemas/profiles/Profile.yaml
+    Proofs:
+      $ref: components/schemas/proofs/Proof.yaml
+    ProofType:
+      $ref: components/schemas/proofTypes/ProofType.yaml
   securitySchemes:
     oAuth:
       $ref: "components/securitySchemes/oAuth.yaml"

@@ -12,7 +12,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Profile.yaml
+            $ref: ../components/schemas/profiles/Profile.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":
@@ -43,7 +43,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Profile.yaml
+            $ref: ../components/schemas/profiles/Profile.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":

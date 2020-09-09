@@ -15,7 +15,7 @@ get:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/Device.yaml
+              $ref: ../components/schemas/devices/Device.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":
