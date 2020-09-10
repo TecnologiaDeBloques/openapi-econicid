@@ -290,7 +290,7 @@ paths:
           $ref: '#/components/responses/ServerError'
   '/certificate_types/{certificate_type_id}':
     parameters:
-      - $ref: '#/components/parameters/ProofType'
+      - $ref: '#/components/parameters/CertificateType'
     get:
       tags:
         - Certificate Types
@@ -544,7 +544,7 @@ paths:
           $ref: '#/components/responses/ServerError'
   '/credential_types/{credential_type_id}':
     parameters:
-      - $ref: '#/components/parameters/ProofType'
+      - $ref: '#/components/parameters/CredentialType'
     get:
       tags:
         - Credential Types
@@ -2378,10 +2378,10 @@ components:
       schema:
         type: integer
         minimum: 1
-    ProofType:
-      name: proof_type_id
+    CertificateType:
+      name: certificate_type_id
       in: path
-      description: The hex encoded unique identifier of the Proof Type
+      description: The hex encoded unique identifier of the Certificate Type
       required: true
       schema:
         type: string
@@ -2389,6 +2389,13 @@ components:
       name: certificate_id
       in: path
       description: The hex encoded unique identifier of the certificate
+      required: true
+      schema:
+        type: string
+    CredentialType:
+      name: credential_type_id
+      in: path
+      description: The hex encoded unique identifier of the Credential Type
       required: true
       schema:
         type: string
@@ -2417,6 +2424,13 @@ components:
       name: profile_id
       in: path
       description: The hex encoded unique identifier of the profile
+      required: true
+      schema:
+        type: string
+    ProofType:
+      name: proof_type_id
+      in: path
+      description: The hex encoded unique identifier of the Proof Type
       required: true
       schema:
         type: string

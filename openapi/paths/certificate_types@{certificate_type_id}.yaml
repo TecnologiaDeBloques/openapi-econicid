@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/ids/ProofType.yaml
+  - $ref: ../components/parameters/ids/CertificateType.yaml
 get:
   tags:
     - Certificate Types
