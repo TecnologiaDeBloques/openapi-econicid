@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Certificates
+  summary: List Certificates
+  description: >-
+    Returns a list of all the existing Certificates
+  operationId: listCertificates
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/certificates/Certificate.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml
+post:
+  tags:
+    - Certificates
+  summary: Emit a Certificate
+  description: Emits a new Certificate
+  operationId: emitCertificate
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/requestBodies/certificates/Emit.yaml
+    required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/certificates/Certificate.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml

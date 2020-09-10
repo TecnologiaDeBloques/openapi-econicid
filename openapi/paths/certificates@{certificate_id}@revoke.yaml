@@ -1,0 +1,25 @@
+parameters:
+  - $ref: ../components/parameters/ids/Certificate.yaml
+post:
+  tags:
+    - Certificates
+  summary: Revoke a Certificate
+  description: Revoke a Certificate which will render it invalid
+  operationId: revokeCertificate
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/certificates/CertificateRevoked.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml

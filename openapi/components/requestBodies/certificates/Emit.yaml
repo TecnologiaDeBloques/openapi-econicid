@@ -5,8 +5,8 @@ properties:
   certificate_type_id:
     $ref: ../../schemas/certificateTypes/ID.yaml
   emissor_id:
-    $ref: ./../schemas/certificates/EmissorID.yaml
+    $ref: ../../schemas/certificates/EmissorID.yaml
   expiration_date:
-    $ref: ./../schemas/certificates/ExpirationDate.yaml
+    $ref: ../../schemas/certificates/ExpirationDate.yaml
   data:
     $ref: ../../schemas/shared/Data.yaml

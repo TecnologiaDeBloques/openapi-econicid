@@ -240,10 +240,26 @@ paths:
     $ref: paths/certificate_types@.yaml
   "/certificate_types/{certificate_type_id}":
     $ref: "paths/certificate_types@{certificate_type_id}.yaml"
+  /certificates:
+    $ref: paths/certificates@.yaml
+  "/certificates/{certificate_id}":
+    $ref: "paths/certificates@{certificate_id}.yaml"
+  "/certificates/{certificate_id}/revoke":
+    $ref: "paths/certificates@{certificate_id}@revoke.yaml"
   /credential_types:
     $ref: paths/credential_types@.yaml
   "/credential_types/{credential_type_id}":
     $ref: "paths/credential_types@{credential_type_id}.yaml"
+  /credentials:
+    $ref: paths/credentials@.yaml
+  "/credentials/{credential_id}":
+    $ref: "paths/credentials@{credential_id}.yaml"
+  "/credentials/{credential_id}/revoke":
+    $ref: "paths/credentials@{credential_id}@revoke.yaml"
+  "/credentials/{credential_id}/sign":
+    $ref: "paths/credentials@{credential_id}@sign.yaml"
+  "/credentials/{credential_id}/verify":
+    $ref: "paths/credentials@{credential_id}@verify.yaml"
   /devices:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":
