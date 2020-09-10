@@ -2,12 +2,14 @@
   "name": "econic-id-api-reference",
   "version": "1.0.0",
   "dependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.11"
+    "@redocly/openapi-cli": "^1.0.0-beta.11",
+    "gh-pages": "^3.1.0"
   },
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
     "build": "openapi bundle -o swagger --ext json",
-    "test": "openapi lint"
+    "test": "openapi lint",
+    "gh-pages": "gh-pages -d web_deploy"
   }
 }
