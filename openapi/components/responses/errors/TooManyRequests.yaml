@@ -1,7 +1,0 @@
-description: >-
-  Too many requests hit the API too quickly. Try again later or backoff your
-  requests.
-content:
-  application/json:
-    schema:
-      $ref: ./Error.yaml

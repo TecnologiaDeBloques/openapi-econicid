@@ -1,4 +1,0 @@
-description: Profile ID of the emissor of this certificate
-type: string
-minLength: 1
-example: "0xBABE0bCAbC71488E36ec54FD7a8B9e72C6b2a128"

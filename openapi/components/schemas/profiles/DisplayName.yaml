@@ -1,4 +1,0 @@
-description: Public diplay name of the profile.
-type: string
-minLength: 1
-example: Sterling Archer

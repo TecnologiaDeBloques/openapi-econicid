@@ -1,4 +1,0 @@
-description: Hex encoded unique identifier of the Proof
-type: string
-minLength: 1
-example: "0xDDDDD87eF86691778694C978EE1352CB6106adE6"

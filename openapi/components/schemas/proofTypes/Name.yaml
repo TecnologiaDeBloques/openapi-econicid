@@ -1,4 +1,0 @@
-description: Name of the Proof Type.
-type: string
-minLength: 1
-example: CCW Permit

@@ -1,4 +1,0 @@
-description: Name of the Certificate Type.
-type: string
-minLength: 1
-example: CIA ID

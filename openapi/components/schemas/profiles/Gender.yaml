@@ -1,4 +1,0 @@
-description: Gender of the person. (Only applied for personal profiles).
-type: string
-minLength: 1
-example: MALE

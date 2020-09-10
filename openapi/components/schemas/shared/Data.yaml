@@ -1,3 +1,0 @@
-description: JSON encoded object that allows adding extra information to the resource.
-type: string
-example: '{ codename: "Dutches", internal_code: 123456}'

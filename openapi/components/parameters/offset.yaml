@@ -1,6 +1,0 @@
-name: offset
-in: query
-description: From what object number will the pagination start
-schema:
-  type: integer
-  minimum: 1

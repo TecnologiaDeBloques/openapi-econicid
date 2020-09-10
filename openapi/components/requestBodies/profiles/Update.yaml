@@ -1,8 +1,0 @@
-type: object
-properties:
-  display_name:
-    $ref: ../../schemas/profiles/DisplayName.yaml
-  avatar:
-    $ref: ../../schemas/profiles/Avatar.yaml
-  birthdate:
-    $ref: ../../schemas/profiles/Birthdate.yaml

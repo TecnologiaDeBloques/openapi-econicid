@@ -1,9 +1,0 @@
-description: >-
-  When utilizing an API Key for Authorization, a valid signature must be
-  provided in the headers alongside the API Key. Signatures can be generated
-  utilizing the Private Key and one of our official libraries. **Example**
-  `Signature:`
-  `9a75ZaHd8ULqtZfgVounQItJ3eSqMd25IDe6tNizUJj52ZdlEBP4tjMtUhGi/q84WlrFxrbL3EuqqNitDX7KBQ==`
-type: apiKey
-in: header
-name: Signature

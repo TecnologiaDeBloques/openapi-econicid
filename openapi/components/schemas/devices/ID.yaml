@@ -1,4 +1,0 @@
-description: Unique identifier of the Device
-type: string
-minLength: 1
-example: b0f2f291-74d5-403b-9a82-60961438ca95

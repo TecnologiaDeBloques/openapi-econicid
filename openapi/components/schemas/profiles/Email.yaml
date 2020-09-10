@@ -1,4 +1,0 @@
-description: Verified email of the profile.
-type: string
-format: email
-example: duchess@cia.com

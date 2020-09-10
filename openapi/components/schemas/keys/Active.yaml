@@ -1,3 +1,0 @@
-description: If the key is active or if it has been temporaly disabled.
-type: boolean
-minLength: 1

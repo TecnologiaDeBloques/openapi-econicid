@@ -1,5 +1,0 @@
-description: Something went wrong on Econic's end.
-content:
-  application/json:
-    schema:
-      $ref: ./Error.yaml

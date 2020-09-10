@@ -1,7 +1,0 @@
-description: >-
-  The request was unacceptable, often due a invalid or missing required
-  parameter.
-content:
-  application/json:
-    schema:
-      $ref: ./Error.yaml

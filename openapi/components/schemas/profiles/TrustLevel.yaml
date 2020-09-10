@@ -1,9 +1,0 @@
-description: The level of trust this profile has, which can be changed though profile verification.
-type: string
-minLength: 1
-example: FULL
-enum:
-  - NONE
-  - MARGINAL
-  - FULL
-  - ULTIMATE

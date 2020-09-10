@@ -1,5 +1,0 @@
-description: The request lacks valid authentication credentials for the target resource.
-content:
-  application/json:
-    schema:
-      $ref: ./Error.yaml

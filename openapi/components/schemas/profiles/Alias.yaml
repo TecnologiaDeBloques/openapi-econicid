@@ -1,4 +1,0 @@
-description: Profile identifier
-type: string
-minLength: 1
-example: tecdebloques

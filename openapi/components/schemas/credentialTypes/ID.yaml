@@ -1,4 +1,0 @@
-description: Hex encoded unique identifier of the Certificate Type
-type: string
-minLength: 1
-example: "0xCA7bBFa60AF11e87aAFb55e6D072899b111016be"

@@ -1,4 +1,0 @@
-description: Space separated list of permission scopes of the key.
-type: string
-minLength: 1
-example: keys devices profiles

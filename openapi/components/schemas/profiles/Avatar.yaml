@@ -1,4 +1,0 @@
-description: Public facing avatar of the profile.
-type: string
-minLength: 1
-example: serpiente

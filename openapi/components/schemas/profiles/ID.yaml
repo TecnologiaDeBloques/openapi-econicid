@@ -1,4 +1,0 @@
-description: Hex encoded unique identifier of a profile.
-type: string
-minLength: 1
-example: "0xDAD81C5E34081Fb2514C9bF69d07Dd76CA696A59"
