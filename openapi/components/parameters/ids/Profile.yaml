@@ -1,6 +1,6 @@
 name: profile_id
 in: path
-description: The unique identifier of the profile
+description: The hex encoded unique identifier of the profile
 required: true
 schema:
   type: string

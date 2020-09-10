@@ -1,6 +1,6 @@
 name: key_id
 in: path
-description: The unique identifier of the key
+description: The hex encoded unique identifier of the key
 required: true
 schema:
   type: string

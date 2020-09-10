@@ -1,0 +1,6 @@
+name: certificate_type_id
+in: path
+description: The hex encoded unique identifier of the Certificate Type
+required: true
+schema:
+  type: string

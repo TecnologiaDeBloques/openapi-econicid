@@ -1,0 +1,83 @@
+parameters:
+  - $ref: ../components/parameters/ids/ProofType.yaml
+get:
+  tags:
+    - Proof Types
+  summary: Get a Proof Type
+  description: Retrieve an existing Proof Type
+  operationId: getProofType
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/proofTypes/ProofType.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "404":
+      $ref: ../components/responses/errors/NotFound.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml
+put:
+  tags:
+    - Proof Types
+  summary: Update a Proof Type
+  description: Update an existing Proof Type
+  operationId: updateProofType
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/requestBodies/proofTypes/Update.yaml
+    required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/proofTypes/ProofType.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "404":
+      $ref: ../components/responses/errors/NotFound.yaml
+    "409":
+      $ref: ../components/responses/errors/Conflict.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml
+delete:
+  tags:
+    - Proof Types
+  summary: Delete a Proof Type
+  description: Delete a Proof Type
+  operationId: deleteProofType
+  responses:
+    "200":
+      description: OK
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "404":
+      $ref: ../components/responses/errors/NotFound.yaml
+    "409":
+      $ref: ../components/responses/errors/Conflict.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml

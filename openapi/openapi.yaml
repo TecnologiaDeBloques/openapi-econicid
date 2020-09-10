@@ -221,6 +221,11 @@ x-tagGroups:
       - Devices
   - name: Profile Owned Resources
     tags:
+      - Certificate Types
+      - Certificates
+      - Credential Types
+      - Credentials
+      - Proof Types
       - Proofs
 security:
   - oAuth: []
@@ -231,6 +236,22 @@ servers:
   - url: "https://www.econicid.com"
     description: Production environment
 paths:
+  /certificate_types:
+    $ref: paths/certificate_types@.yaml
+  "/certificate_types/{certificate_type_id}":
+    $ref: "paths/certificate_types@{certificate_type_id}.yaml"
+  /credential_types:
+    $ref: paths/credential_types@.yaml
+  "/credential_types/{credential_type_id}":
+    $ref: "paths/credential_types@{credential_type_id}.yaml"
+  /devices:
+    $ref: paths/devices@.yaml
+  "/devices/{device_id}":
+    $ref: "paths/devices@{device_id}.yaml"
+  /keys:
+    $ref: paths/keys@.yaml
+  "/keys/{key_id}":
+    $ref: "paths/keys@{key_id}.yaml"
   /profiles:
     $ref: paths/profiles@.yaml
   "/profiles/{profile_id}":
@@ -239,20 +260,17 @@ paths:
     $ref: "paths/profiles@{profile_id}@requestVerification.yaml"
   "/profiles/{profile_id}/verify":
     $ref: "paths/profiles@{profile_id}@verify.yaml"
-  /devices:
-    $ref: paths/devices@.yaml
-  "/devices/{device_id}":
-    $ref: "paths/devices@{device_id}.yaml"
+  /proof_types:
+    $ref: paths/proof_types@.yaml
+  "/proof_types/{proof_type_id}":
+    $ref: "paths/proof_types@{proof_type_id}.yaml"
   /proofs:
     $ref: paths/proofs@.yaml
   "/proofs/{proof_id}":
     $ref: "paths/proofs@{proof_id}.yaml"
   "/proofs/{proof_id}/verify":
     $ref: "paths/proofs@{proof_id}@verify.yaml"
-  /keys:
-    $ref: paths/keys@.yaml
-  "/keys/{key_id}":
-    $ref: "paths/keys@{key_id}.yaml"
+
 components:
   schemas:
     Certificate:
