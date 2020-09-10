@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o dist",
+    "build": "openapi bundle -o swagger --ext json",
     "test": "openapi lint"
   }
 }
