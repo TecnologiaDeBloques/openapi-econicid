@@ -88,6 +88,12 @@
         "Proof Types",
         "Proofs"
       ]
+    },
+    {
+      "name": "Files",
+      "tags": [
+        "Files"
+      ]
     }
   ],
   "security": [
@@ -1242,6 +1248,53 @@
         }
       }
     },
+    "/files": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Upload a new file",
+        "description": "Uploads a new file and returns the URL",
+        "operationId": "uploadFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Create-5"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Create-6"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      }
+    },
     "/keys": {
       "get": {
         "tags": [
@@ -1300,7 +1353,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Create-5"
+                "$ref": "#/components/schemas/Create-7"
               }
             }
           },
@@ -1312,7 +1365,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Create-6"
+                  "$ref": "#/components/schemas/Create-8"
                 }
               }
             }
@@ -1472,7 +1525,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Create-7"
+                "$ref": "#/components/schemas/Create-9"
               }
             }
           },
@@ -1799,7 +1852,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Create-8"
+                "$ref": "#/components/schemas/Create-10"
               }
             }
           },
@@ -2022,7 +2075,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Create-9"
+                "$ref": "#/components/schemas/Create-11"
               }
             }
           },
@@ -2865,6 +2918,30 @@
       "Create-5": {
         "type": "object",
         "properties": {
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "Create-6": {
+        "type": "object",
+        "properties": {
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "https://storage.googleapis.com/files-econic-staging/filesC3e1kzLUdGB3oUWM"
+            }
+          }
+        }
+      },
+      "Create-7": {
+        "type": "object",
+        "properties": {
           "name": {
             "$ref": "#/components/schemas/Name-4"
           },
@@ -2873,7 +2950,7 @@
           }
         }
       },
-      "Create-6": {
+      "Create-8": {
         "type": "object",
         "properties": {
           "key": {
@@ -2975,7 +3052,7 @@
           }
         }
       },
-      "Create-7": {
+      "Create-9": {
         "type": "object",
         "properties": {
           "type": {
@@ -3108,7 +3185,7 @@
           }
         }
       },
-      "Create-8": {
+      "Create-10": {
         "type": "object",
         "properties": {
           "profile_id": {
@@ -3199,7 +3276,7 @@
           }
         }
       },
-      "Create-9": {
+      "Create-11": {
         "type": "object",
         "properties": {
           "profile_id": {
