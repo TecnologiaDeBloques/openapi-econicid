@@ -227,6 +227,9 @@ x-tagGroups:
       - Credentials
       - Proof Types
       - Proofs
+  - name: Files
+    tags:
+      - Files
 security:
   - oAuth: []
   - APIKey: []
@@ -264,6 +267,8 @@ paths:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":
     $ref: "paths/devices@{device_id}.yaml"
+  /files:
+    $ref: paths/files@.yaml
   /keys:
     $ref: paths/keys@.yaml
   "/keys/{key_id}":

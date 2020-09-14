@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Files
+  summary: Upload a new file
+  description: Uploads a new file and returns the URL
+  operationId: uploadFile
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../components/requestBodies/files/Create.yaml
+    required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/files/Create.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml
