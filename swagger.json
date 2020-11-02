@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "1.2.0",
+    "version": "1.4.0",
     "title": "Econic ID API Reference",
     "termsOfService": "https://www.econicapp.com/terms",
     "contact": {
@@ -2199,9 +2199,9 @@
         "tags": [
           "Proofs"
         ],
-        "summary": "Approve Proof",
+        "summary": "Verify a Proof",
         "description": "Mark a proof as valid",
-        "operationId": "approveProof",
+        "operationId": "verifyProof",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2301,6 +2301,11 @@
         "minLength": 1,
         "example": "0xDDDDD87eF86691778694C978EE1352CB6106adE6"
       },
+      "Data": {
+        "description": "JSON encoded object that allows adding extra information to the resource.",
+        "type": "string",
+        "example": "{ codename: \"Dutches\", internal_code: 123456}"
+      },
       "CertificateType": {
         "type": "object",
         "properties": {
@@ -2321,6 +2326,9 @@
             "items": {
               "$ref": "#/components/schemas/ID-3"
             }
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data"
           }
         }
       },
@@ -2413,11 +2421,6 @@
           "EMITTED",
           "REVOKED"
         ]
-      },
-      "Data": {
-        "description": "JSON encoded object that allows adding extra information to the resource.",
-        "type": "string",
-        "example": "{ codename: \"Dutches\", internal_code: 123456}"
       },
       "Certificate-2": {
         "type": "object",
@@ -2545,6 +2548,9 @@
             "items": {
               "$ref": "#/components/schemas/ID-3"
             }
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data"
           }
         }
       },
@@ -2609,6 +2615,12 @@
         "format": "date",
         "minLength": 1
       },
+      "PhotoURL": {
+        "description": "URL of the credential identification photo.",
+        "type": "string",
+        "minLength": 1,
+        "example": "www.econicid.com/bucket/321dufas89"
+      },
       "Credential": {
         "type": "object",
         "properties": {
@@ -2629,6 +2641,9 @@
           },
           "expiration_date": {
             "$ref": "#/components/schemas/ExpirationDate-2"
+          },
+          "photo_url": {
+            "$ref": "#/components/schemas/PhotoURL"
           },
           "status": {
             "$ref": "#/components/schemas/Status"

@@ -3,9 +3,9 @@ parameters:
 post:
   tags:
     - Proofs
-  summary: Approve Proof
+  summary: Verify a Proof
   description: Mark a proof as valid
-  operationId: approveProof
+  operationId: verifyProof
   requestBody:
     content:
       application/json:
