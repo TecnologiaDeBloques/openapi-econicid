@@ -1,0 +1,4 @@
+description: Hex encoded unique identifier of the file
+type: string
+minLength: 1
+example: "0xCCCF443FaED05e40C6b4480818626bc140C3d498"

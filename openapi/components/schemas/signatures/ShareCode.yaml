@@ -1,0 +1,4 @@
+description: A code that can be shared for verifying the signature
+type: string
+minLength: 1
+example: aG172bzM

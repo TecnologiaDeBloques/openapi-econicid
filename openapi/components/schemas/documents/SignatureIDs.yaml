@@ -1,0 +1,4 @@
+description: IDs from the signatures that have been attached to this document
+type: string
+minLength: 1
+example: "[0x244Fe07498e52Ff5B7BF6BD6a38c38c1254374e2, 0xa62664c243F906559657D09A763c60059733abBb]"

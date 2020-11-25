@@ -1,0 +1,4 @@
+description: Alphanumeric value that uniquely represents the contents of a file, can be used to verify the integrity of such file.
+type: string
+minLength: 1
+example: "cb449d8eb64f6203818456e257dbd26934d6bdafd592777c6b62854f4b973155"

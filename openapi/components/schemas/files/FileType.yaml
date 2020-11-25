@@ -1,0 +1,4 @@
+description: The file format in which the information is encoded for storage in the file.
+type: string
+minLength: 1
+example: jpg

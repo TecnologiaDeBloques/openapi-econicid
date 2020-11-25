@@ -1,0 +1,4 @@
+description: IDs from profiles that have signed this document.
+type: string
+minLength: 1
+example: "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79]"

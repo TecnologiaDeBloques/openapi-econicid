@@ -1,0 +1,4 @@
+description: IDs from the profiles that have been requested to sign.
+type: string
+minLength: 1
+example: "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79, 0xE71dDFB1548973a482be7B06c759e22C670b9770]"

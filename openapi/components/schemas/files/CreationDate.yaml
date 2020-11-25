@@ -1,0 +1,4 @@
+description: The date for when the certificate was emited.
+type: string
+format: date
+minLength: 1

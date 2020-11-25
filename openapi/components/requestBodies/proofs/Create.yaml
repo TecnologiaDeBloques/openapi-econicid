@@ -6,7 +6,7 @@ properties:
     $ref: ../../schemas/proofTypes/ID.yaml
   expiration_date:
     $ref: ../../schemas/proofs/ExpirationDate.yaml
-  file_url:
-    $ref: ../../schemas/proofs/FileURL.yaml
+  file_ids:
+    $ref: ../../schemas/proofs/FileIDs.yaml
   data:
     $ref: ../../schemas/shared/Data.yaml

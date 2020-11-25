@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    $ref: ./ID.yaml
+  profile_id:
+    $ref: ../profiles/ID.yaml
+  object:
+    $ref: ./Object.yaml
+  object_type:
+    $ref: ./ObjectType.yaml
+  creation_date:
+    $ref: ./CreationDate.yaml
+  location:
+    $ref: ./Location.yaml
+  message:
+    $ref: ./Message.yaml
+  signature:
+    $ref: ./Sig.yaml
+  share_code:
+    $ref: ./ShareCode.yaml

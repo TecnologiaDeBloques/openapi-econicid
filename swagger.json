@@ -72,11 +72,7 @@
     },
     {
       "name": "User Owned Resources",
-      "tags": [
-        "Profiles",
-        "Keys",
-        "Devices"
-      ]
+      "tags": ["Profiles", "Keys", "Devices"]
     },
     {
       "name": "Profile Owned Resources",
@@ -91,9 +87,7 @@
     },
     {
       "name": "Files",
-      "tags": [
-        "Files"
-      ]
+      "tags": ["Files"]
     }
   ],
   "security": [
@@ -117,9 +111,7 @@
   "paths": {
     "/certificate_types": {
       "get": {
-        "tags": [
-          "Certificate Types"
-        ],
+        "tags": ["Certificate Types"],
         "summary": "List Certificate Types",
         "description": "Returns a list of the existing proof types.",
         "operationId": "listCertificateTypes",
@@ -163,9 +155,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Certificate Types"
-        ],
+        "tags": ["Certificate Types"],
         "summary": "Create a Certificate Type",
         "description": "Creates a new Certificate Type",
         "operationId": "createCertificateType",
@@ -215,9 +205,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Certificate Types"
-        ],
+        "tags": ["Certificate Types"],
         "summary": "Get a Certificate Type",
         "description": "Retrieve an existing Certificate Type",
         "operationId": "getCertificateType",
@@ -253,9 +241,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Certificate Types"
-        ],
+        "tags": ["Certificate Types"],
         "summary": "Update a Certificate Type",
         "description": "Update an existing Certificate Type",
         "operationId": "updateCertificateType",
@@ -304,9 +290,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Certificate Types"
-        ],
+        "tags": ["Certificate Types"],
         "summary": "Delete a Certificate Type",
         "description": "Delete a Certificate Type",
         "operationId": "deleteCertificateType",
@@ -340,9 +324,7 @@
     },
     "/certificates": {
       "get": {
-        "tags": [
-          "Certificates"
-        ],
+        "tags": ["Certificates"],
         "summary": "List Certificates",
         "description": "Returns a list of all the existing Certificates",
         "operationId": "listCertificates",
@@ -386,9 +368,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Certificates"
-        ],
+        "tags": ["Certificates"],
         "summary": "Emit a Certificate",
         "description": "Emits a new Certificate",
         "operationId": "emitCertificate",
@@ -438,9 +418,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Certificates"
-        ],
+        "tags": ["Certificates"],
         "summary": "Get a Certificate",
         "description": "Retrieve an existing Certificate.",
         "operationId": "getCertificate",
@@ -483,9 +461,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Certificates"
-        ],
+        "tags": ["Certificates"],
         "summary": "Revoke a Certificate",
         "description": "Revoke a Certificate which will render it invalid",
         "operationId": "revokeCertificate",
@@ -520,9 +496,7 @@
     },
     "/credential_types": {
       "get": {
-        "tags": [
-          "Credential Types"
-        ],
+        "tags": ["Credential Types"],
         "summary": "List Credential Types",
         "description": "Returns a list of the existing proof types.",
         "operationId": "listCredentialTypes",
@@ -566,9 +540,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Credential Types"
-        ],
+        "tags": ["Credential Types"],
         "summary": "Create a Credential Type",
         "description": "Creates a new Credential Type",
         "operationId": "createCredentialType",
@@ -618,9 +590,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Credential Types"
-        ],
+        "tags": ["Credential Types"],
         "summary": "Get a Credential Type",
         "description": "Retrieve an existing Credential Type",
         "operationId": "getCredentialType",
@@ -656,9 +626,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Credential Types"
-        ],
+        "tags": ["Credential Types"],
         "summary": "Update a Credential Type",
         "description": "Update an existing Credential Type",
         "operationId": "updateCredentialType",
@@ -707,9 +675,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Credential Types"
-        ],
+        "tags": ["Credential Types"],
         "summary": "Delete a Credential Type",
         "description": "Delete a Credential Type",
         "operationId": "deleteCredentialType",
@@ -743,9 +709,7 @@
     },
     "/credentials": {
       "get": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "List Credentials",
         "description": "Returns a list of all the existing Credentials",
         "operationId": "listCredentials",
@@ -789,9 +753,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "Emit a Credential",
         "description": "Emits a new Credential",
         "operationId": "emitCredential",
@@ -841,9 +803,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "Get a Credential",
         "description": "Retrieve an existing Credential.",
         "operationId": "getCredential",
@@ -886,9 +846,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "Revoke a Credential",
         "description": "Revoke a Certificate which will render it invalid",
         "operationId": "revokeCredential",
@@ -928,9 +886,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "Sign with a Credential",
         "description": "Create a signature using the Credential",
         "operationId": "signWithCredential",
@@ -980,9 +936,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Credentials"
-        ],
+        "tags": ["Credentials"],
         "summary": "Verify a signature from a Credential",
         "description": "Verifies a signature from a Credential",
         "operationId": "verifySignatureFromCredential",
@@ -1027,9 +981,7 @@
     },
     "/devices": {
       "get": {
-        "tags": [
-          "Devices"
-        ],
+        "tags": ["Devices"],
         "summary": "List Devices",
         "description": "Returns a list of all your devices sorted chronologicaly by creation date.",
         "operationId": "listDevices",
@@ -1073,9 +1025,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Devices"
-        ],
+        "tags": ["Devices"],
         "summary": "Create a device",
         "description": "Creates a new device",
         "operationId": "createDevice",
@@ -1125,9 +1075,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Devices"
-        ],
+        "tags": ["Devices"],
         "summary": "Get a device",
         "description": "Retrieve an existing Device",
         "operationId": "getDevice",
@@ -1163,9 +1111,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Devices"
-        ],
+        "tags": ["Devices"],
         "summary": "Update a device",
         "description": "Update an existing device",
         "operationId": "updateDevice",
@@ -1214,9 +1160,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Devices"
-        ],
+        "tags": ["Devices"],
         "summary": "Delete a device",
         "description": "Delete a device",
         "operationId": "deleteDevice",
@@ -1250,9 +1194,7 @@
     },
     "/files": {
       "post": {
-        "tags": [
-          "Files"
-        ],
+        "tags": ["Files"],
         "summary": "Upload a new file",
         "description": "Uploads a new file and returns the URL",
         "operationId": "uploadFile",
@@ -1297,9 +1239,7 @@
     },
     "/keys": {
       "get": {
-        "tags": [
-          "Keys"
-        ],
+        "tags": ["Keys"],
         "summary": "List Keys",
         "description": "Returns a list of all your keys sorted chronologicaly by creation date.",
         "operationId": "listKeys",
@@ -1343,9 +1283,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Keys"
-        ],
+        "tags": ["Keys"],
         "summary": "Create a key",
         "description": "Creates a new key",
         "operationId": "createKey",
@@ -1395,9 +1333,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Keys"
-        ],
+        "tags": ["Keys"],
         "summary": "Get a key",
         "description": "Retrieve an existing key.",
         "operationId": "getKey",
@@ -1433,9 +1369,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Keys"
-        ],
+        "tags": ["Keys"],
         "summary": "Delete a key",
         "description": "Delete a key",
         "operationId": "deleteKey",
@@ -1469,9 +1403,7 @@
     },
     "/profiles": {
       "get": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "List profiles",
         "description": "Returns a list of all your profiles sorted chronologicaly by creation date.",
         "operationId": "listProfiles",
@@ -1515,9 +1447,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Create a profile",
         "description": "Creates a new profile",
         "operationId": "createProfile",
@@ -1567,9 +1497,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Get a profile",
         "description": "Get an existing profile from its ID.",
         "operationId": "getProfile",
@@ -1605,9 +1533,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Update a profile",
         "description": "Update an existing profile",
         "operationId": "updateProfile",
@@ -1656,9 +1582,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Delete a profile",
         "description": "Delete a profile",
         "operationId": "deleteProfile",
@@ -1697,9 +1621,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Request email or sms verification code",
         "description": "Send an Email or an SMS message containing a verification code, which can be used to associate the provided email or phone number with your Econic Profile.",
         "operationId": "profileRequestVerification",
@@ -1749,9 +1671,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Profiles"
-        ],
+        "tags": ["Profiles"],
         "summary": "Verify email or phone number",
         "description": "Using a verification code, associate an email or phone number to your Econic Profile.",
         "operationId": "profileVerify",
@@ -1796,9 +1716,7 @@
     },
     "/proof_types": {
       "get": {
-        "tags": [
-          "Proof Types"
-        ],
+        "tags": ["Proof Types"],
         "summary": "List Proof Types",
         "description": "Returns a list of the existing proof types.",
         "operationId": "listProofTypes",
@@ -1842,9 +1760,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Proof Types"
-        ],
+        "tags": ["Proof Types"],
         "summary": "Create a Proof Type",
         "description": "Creates a new Proof Type",
         "operationId": "createProofType",
@@ -1894,9 +1810,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Proof Types"
-        ],
+        "tags": ["Proof Types"],
         "summary": "Get a Proof Type",
         "description": "Retrieve an existing Proof Type",
         "operationId": "getProofType",
@@ -1932,9 +1846,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Proof Types"
-        ],
+        "tags": ["Proof Types"],
         "summary": "Update a Proof Type",
         "description": "Update an existing Proof Type",
         "operationId": "updateProofType",
@@ -1983,9 +1895,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Proof Types"
-        ],
+        "tags": ["Proof Types"],
         "summary": "Delete a Proof Type",
         "description": "Delete a Proof Type",
         "operationId": "deleteProofType",
@@ -2019,9 +1929,7 @@
     },
     "/proofs": {
       "get": {
-        "tags": [
-          "Proofs"
-        ],
+        "tags": ["Proofs"],
         "summary": "List proofs",
         "description": "Returns a list of all your identity proofs sorted chronologicaly by creation date.",
         "operationId": "listProofs",
@@ -2065,9 +1973,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Proofs"
-        ],
+        "tags": ["Proofs"],
         "summary": "Create a proof",
         "description": "Creates a new proof",
         "operationId": "createProof",
@@ -2117,9 +2023,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "Proofs"
-        ],
+        "tags": ["Proofs"],
         "summary": "Get a proof",
         "description": "Retrieve an existing proof.",
         "operationId": "getProof",
@@ -2155,9 +2059,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Proofs"
-        ],
+        "tags": ["Proofs"],
         "summary": "Delete a proof",
         "description": "Delete a proof",
         "operationId": "deleteProof",
@@ -2196,9 +2098,7 @@
         }
       ],
       "post": {
-        "tags": [
-          "Proofs"
-        ],
+        "tags": ["Proofs"],
         "summary": "Verify a Proof",
         "description": "Mark a proof as valid",
         "operationId": "verifyProof",
@@ -2417,10 +2317,7 @@
         "description": "Status of the certificate",
         "type": "string",
         "minLength": 1,
-        "enum": [
-          "EMITTED",
-          "REVOKED"
-        ]
+        "enum": ["EMITTED", "REVOKED"]
       },
       "Certificate-2": {
         "type": "object",
@@ -2475,10 +2372,7 @@
         "description": "Status of the certificate",
         "type": "string",
         "minLength": 1,
-        "enum": [
-          "EMITTED",
-          "REVOKED"
-        ],
+        "enum": ["EMITTED", "REVOKED"],
         "example": "REVOKED"
       },
       "CertificateRevoked": {
@@ -2981,10 +2875,7 @@
         "type": "string",
         "minLength": 1,
         "example": "PERSONAL",
-        "enum": [
-          "PERSONAL",
-          "BUSINESS"
-        ]
+        "enum": ["PERSONAL", "BUSINESS"]
       },
       "DisplayName": {
         "description": "Public diplay name of the profile.",
@@ -3025,12 +2916,7 @@
         "type": "string",
         "minLength": 1,
         "example": "FULL",
-        "enum": [
-          "NONE",
-          "MARGINAL",
-          "FULL",
-          "ULTIMATE"
-        ]
+        "enum": ["NONE", "MARGINAL", "FULL", "ULTIMATE"]
       },
       "Profile": {
         "type": "object",
@@ -3241,11 +3127,7 @@
         "description": "Status of the proof.",
         "type": "string",
         "minLength": 1,
-        "enum": [
-          "PENDING",
-          "APPROVED",
-          "REJECTED"
-        ]
+        "enum": ["PENDING", "APPROVED", "REJECTED"]
       },
       "FileURL": {
         "description": "URL of where the submitted image of the proof is stored.",
@@ -3280,8 +3162,8 @@
           "status": {
             "$ref": "#/components/schemas/Status-2"
           },
-          "file_url": {
-            "$ref": "#/components/schemas/FileURL"
+          "file_ids": {
+            "$ref": "#/components/schemas/FileIDs"
           },
           "verificator_id": {
             "$ref": "#/components/schemas/VerificatorID"
@@ -3303,8 +3185,8 @@
           "expiration_date": {
             "$ref": "#/components/schemas/ExpirationDate-3"
           },
-          "file_url": {
-            "$ref": "#/components/schemas/FileURL"
+          "file_ids": {
+            "$ref": "#/components/schemas/FileIDs"
           },
           "data": {
             "$ref": "#/components/schemas/Data"

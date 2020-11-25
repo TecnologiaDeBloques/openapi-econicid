@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    $ref: ./ID.yaml
+  profile_id:
+    $ref: ../profiles/ID.yaml
+  checksum:
+    $ref: ./Checksum.yaml
+  url:
+    $ref: ./URL.yaml
+  file_type:
+    $ref: ./FileType.yaml
+  creation_date:
+    $ref: ./CreationDate.yaml

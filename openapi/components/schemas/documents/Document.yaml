@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    $ref: ./ID.yaml
+  profile_id:
+    $ref: ../profiles/ID.yaml
+  file_ids:
+    $ref: ./FileIDs.yaml
+  signature_requested_profiles:
+    $ref: ./SignatureRequestedProfiles.yaml
+  signed_by_profiles:
+    $ref: ./SignedByProfiles.yaml
+  singature_ids:
+    $ref: ./SignatureIDs.yaml
+  creation_date:
+    $ref: ./CreationDate.yaml

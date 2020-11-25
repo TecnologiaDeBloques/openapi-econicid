@@ -1,0 +1,4 @@
+description: The object that was signed, this can be a resource ID or a string. This becomes part of the message that is going to be signed.
+type: string
+minLength: 1
+example: "0x63c22A237531afdCE6d9863926E3D5eAE5998f46"

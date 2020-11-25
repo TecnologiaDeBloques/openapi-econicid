@@ -1,0 +1,4 @@
+description: Optional coordinates on where the signature was generated.
+type: string
+minLength: 1
+example: -21.8031178,168.1873207,3.21z

@@ -1,0 +1,4 @@
+description: The cryptographic signature of the message, signed with the profile signing private key
+type: string
+minLength: 1
+example: H7lkLgivpu/+AKBp7fbG3Cj6r8I7DkyDi/mtZjT2OdyINw0lRNA5HxGglPhUsK8d3DNp8TPFarfY0i0RVTaADg==

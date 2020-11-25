@@ -12,8 +12,8 @@ properties:
     $ref: ./ExpirationDate.yaml
   status:
     $ref: ./Status.yaml
-  file_url:
-    $ref: ./FileURL.yaml
+  file_ids:
+    $ref: ./FileIDs.yaml
   verificator_id:
     $ref: ./VerificatorID.yaml
   data:
