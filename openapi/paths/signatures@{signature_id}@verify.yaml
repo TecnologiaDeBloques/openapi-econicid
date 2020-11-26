@@ -3,8 +3,8 @@ parameters:
 post:
   tags:
     - Signatures
-  summary: Verify the cryptografic signature of the signature object
-  description: Verify a signature
+  summary: Verify a signature
+  description: Verify the cryptografic signature of the signature object
   operationId: verifySignature
   requestBody:
     content:
