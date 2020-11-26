@@ -1,0 +1,10 @@
+type: object
+properties:
+  message:
+    $ref: ../../schemas/signatures/Message.yaml
+  signature:
+    $ref: ../../schemas/signatures/Sig.yaml
+  valid:
+    description: A boolean returning if the credential signature is valid for the provided message.
+    type: boolean
+    example: true

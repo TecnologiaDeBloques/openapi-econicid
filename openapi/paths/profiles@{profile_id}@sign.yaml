@@ -1,0 +1,31 @@
+parameters:
+  - $ref: ../components/parameters/ids/Profile.yaml
+post:
+  tags:
+    - Profiles
+  summary: Sign with a Profile
+  description: Create a signature using the profile signing private key
+  operationId: signWithProfile
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/requestBodies/profiles/Sign.yaml
+    required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/signatures/Signature.yaml
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml

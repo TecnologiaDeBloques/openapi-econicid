@@ -1,0 +1,6 @@
+name: file_id
+in: path
+description: The hex encoded unique identifier of the File
+required: true
+schema:
+  type: string

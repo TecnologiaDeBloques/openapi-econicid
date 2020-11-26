@@ -1,0 +1,6 @@
+type: object
+properties:
+  message:
+    $ref: ../../schemas/signatures/Message.yaml
+  signature:
+    $ref: ../../schemas/signatures/Sig.yaml

@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    $ref: ../../schemas/profiles/ID.yaml
+  display_name:
+    $ref: ../../schemas/profiles/DisplayName.yaml
+  avatar:
+    $ref: ../../schemas/profiles/Avatar.yaml
+  email:
+    $ref: ../../schemas/profiles/Email.yaml
+  phone:
+    $ref: ../../schemas/profiles/Phone.yaml

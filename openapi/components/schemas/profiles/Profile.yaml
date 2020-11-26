@@ -8,6 +8,8 @@ properties:
     $ref: ./Type.yaml
   display_name:
     $ref: ./DisplayName.yaml
+  alias:
+    $ref: ./Alias.yaml
   avatar:
     $ref: ./Avatar.yaml
   birthdate:
@@ -16,7 +18,3 @@ properties:
     $ref: ./Email.yaml
   phone:
     $ref: ./Phone.yaml
-  gender:
-    $ref: ./Gender.yaml
-  trust_level:
-    $ref: ./TrustLevel.yaml

@@ -254,6 +254,7 @@ x-tagGroups:
       - Credentials
       - Proof Types
       - Proofs
+      - Signatures
   - name: Files
     tags:
       - Files
@@ -286,10 +287,6 @@ paths:
     $ref: "paths/credentials@{credential_id}.yaml"
   "/credentials/{credential_id}/revoke":
     $ref: "paths/credentials@{credential_id}@revoke.yaml"
-  "/credentials/{credential_id}/sign":
-    $ref: "paths/credentials@{credential_id}@sign.yaml"
-  "/credentials/{credential_id}/verify":
-    $ref: "paths/credentials@{credential_id}@verify.yaml"
   /devices:
     $ref: paths/devices@.yaml
   "/devices/{device_id}":
@@ -308,6 +305,10 @@ paths:
     $ref: "paths/profiles@{profile_id}@requestVerification.yaml"
   "/profiles/{profile_id}/verify":
     $ref: "paths/profiles@{profile_id}@verify.yaml"
+  "/profiles/lookup":
+    $ref: "paths/profiles@lookup.yaml"
+  "/profiles/{profile_id}/sign":
+    $ref: "paths/profiles@{profile_id}@sign.yaml"
   /proof_types:
     $ref: paths/proof_types@.yaml
   "/proof_types/{proof_type_id}":
@@ -318,6 +319,14 @@ paths:
     $ref: "paths/proofs@{proof_id}.yaml"
   "/proofs/{proof_id}/verify":
     $ref: "paths/proofs@{proof_id}@verify.yaml"
+  /signatures:
+    $ref: paths/signatures@.yaml
+  "/signatures/{signature_id}":
+    $ref: "paths/signatures@{signature_id}.yaml"
+  "/signatures/lookup":
+    $ref: "paths/signatures@lookup.yaml"
+  "/signatures/{signature_id}/verify":
+    $ref: "paths/signatures@{signature_id}@verify.yaml"
 
 components:
   schemas:

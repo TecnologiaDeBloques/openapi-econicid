@@ -1,16 +1,14 @@
-parameters:
-  - $ref: ../components/parameters/ids/Credential.yaml
 post:
   tags:
-    - Credentials
-  summary: Verify a signature from a Credential
-  description: Verifies a signature from a Credential
-  operationId: verifySignatureFromCredential
+    - Profiles
+  summary: Lookup for a Profile
+  description: Looks for information from a profile using its email or phone
+  operationId: lookupProfile
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/requestBodies/credentials/Verify.yaml
+          $ref: ../components/requestBodies/profiles/Lookup.yaml
     required: true
   responses:
     "200":
@@ -18,7 +16,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/responses/credentials/Verify.yaml
+            $ref: ../components/responses/profiles/Lookup.yaml
     "400":
       $ref: ../components/responses/errors/BadRequest.yaml
     "401":

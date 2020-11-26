@@ -1,0 +1,6 @@
+type: object
+properties:
+  email:
+    $ref: ../../schemas/profiles/Email.yaml
+  phone:
+    $ref: ../../schemas/profiles/Phone.yaml

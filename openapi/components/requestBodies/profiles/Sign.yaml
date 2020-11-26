@@ -1,0 +1,8 @@
+type: object
+properties:
+  object:
+    $ref: ../../schemas/signatures/Object.yaml
+  object_type:
+    $ref: ../../schemas/signatures/ObjectType.yaml
+  location:
+    $ref: ../../schemas/signatures/Location.yaml

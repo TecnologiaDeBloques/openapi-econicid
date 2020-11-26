@@ -1,4 +1,4 @@
-description: Profile identifier
+description: User defined unique identifier
 type: string
 minLength: 1
-example: tecdebloques
+example: archer
