@@ -1,0 +1,8 @@
+type: object
+properties:
+  profile_id:
+    $ref: ../../schemas/profiles/ID.yaml
+  file_ids:
+    $ref: ../../schemas/documents/FileIDs.yaml
+  signature_requested_profiles:
+    $ref: ../../schemas/documents/SignatureRequestedProfiles.yaml

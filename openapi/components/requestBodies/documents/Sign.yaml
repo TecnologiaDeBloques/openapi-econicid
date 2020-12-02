@@ -1,7 +1,6 @@
 type: object
 properties:
-  message:
-    description: The message that will be signed.
-    type: string
-    minLength: 1
-    example: "Danger Zone!"
+  profile_id:
+    $ref: ../../schemas/profiles/ID.yaml
+  location:
+    $ref: ../../schemas/signatures/Location.yaml

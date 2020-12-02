@@ -102,6 +102,7 @@
         "Credentials",
         "Proof Types",
         "Proofs",
+        "Documents",
         "Signatures"
       ]
     },
@@ -2252,6 +2253,230 @@
         }
       }
     },
+    "/documents": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "List Documents",
+        "description": "Returns a list of all your documents",
+        "operationId": "listDocuments",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Document"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Create a document",
+        "description": "Creates a new document",
+        "operationId": "createDocument",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Create-12"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      }
+    },
+    "/documents/{document_id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Document"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Get a document",
+        "description": "Retrieve an existing document.",
+        "operationId": "getDocument",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Delete a document",
+        "description": "Delete a document",
+        "operationId": "deleteDocument",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      }
+    },
+    "/documents/{document_id}/sign": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Document"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Sign a Document",
+        "description": "Sign a document that has requested your signature",
+        "operationId": "signDocument",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sign-2"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Signature-2"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/RequestFailed"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      }
+    },
     "/signatures": {
       "get": {
         "tags": [
@@ -2392,12 +2617,7 @@
         }
       }
     },
-    "/signatures/{signature_id}/verify": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/Signature"
-        }
-      ],
+    "/signatures/verify": {
       "post": {
         "tags": [
           "Signatures"
@@ -3585,6 +3805,96 @@
           }
         }
       },
+      "ID-12": {
+        "description": "Hex encoded unique identifier of the document",
+        "type": "string",
+        "minLength": 1,
+        "example": "0xAAAAD87eF86691778694C978EE1352CB6106adE6"
+      },
+      "FileIDs-2": {
+        "description": "IDs of the files that this document is comprised of.",
+        "type": "string",
+        "minLength": 1,
+        "example": [
+          "0xCCCF443FaED05e40C6b4480818626bc140C3d498",
+          "0xFFCAA43FaED05e40C6b4480818626bc140C3d498"
+        ]
+      },
+      "SignatureRequestedProfiles": {
+        "description": "IDs from the profiles that have been requested to sign.",
+        "type": "string",
+        "minLength": 1,
+        "example": "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79, 0xE71dDFB1548973a482be7B06c759e22C670b9770]"
+      },
+      "SignedByProfiles": {
+        "description": "IDs from profiles that have signed this document.",
+        "type": "string",
+        "minLength": 1,
+        "example": "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79]"
+      },
+      "SignatureIDs": {
+        "description": "IDs from the signatures that have been attached to this document",
+        "type": "string",
+        "minLength": 1,
+        "example": "[0x244Fe07498e52Ff5B7BF6BD6a38c38c1254374e2, 0xa62664c243F906559657D09A763c60059733abBb]"
+      },
+      "CreationDate-2": {
+        "description": "The date for when the document was created.",
+        "type": "string",
+        "format": "date",
+        "minLength": 1
+      },
+      "Document": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ID-12"
+          },
+          "profile_id": {
+            "$ref": "#/components/schemas/ID-2"
+          },
+          "file_ids": {
+            "$ref": "#/components/schemas/FileIDs-2"
+          },
+          "signature_requested_profiles": {
+            "$ref": "#/components/schemas/SignatureRequestedProfiles"
+          },
+          "signed_by_profiles": {
+            "$ref": "#/components/schemas/SignedByProfiles"
+          },
+          "singature_ids": {
+            "$ref": "#/components/schemas/SignatureIDs"
+          },
+          "creation_date": {
+            "$ref": "#/components/schemas/CreationDate-2"
+          }
+        }
+      },
+      "Create-12": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "$ref": "#/components/schemas/ID-2"
+          },
+          "file_ids": {
+            "$ref": "#/components/schemas/FileIDs-2"
+          },
+          "signature_requested_profiles": {
+            "$ref": "#/components/schemas/SignatureRequestedProfiles"
+          }
+        }
+      },
+      "Sign-2": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "$ref": "#/components/schemas/ID-2"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          }
+        }
+      },
       "Lookup-3": {
         "type": "object",
         "properties": {
@@ -3620,7 +3930,7 @@
           }
         }
       },
-      "ID-12": {
+      "ID-13": {
         "description": "Hex encoded unique identifier of the file",
         "type": "string",
         "minLength": 1,
@@ -3644,7 +3954,7 @@
         "minLength": 1,
         "example": "jpg"
       },
-      "CreationDate-2": {
+      "CreationDate-3": {
         "description": "The date for when the certificate was emited.",
         "type": "string",
         "format": "date",
@@ -3654,7 +3964,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "$ref": "#/components/schemas/ID-12"
+            "$ref": "#/components/schemas/ID-13"
           },
           "profile_id": {
             "$ref": "#/components/schemas/ID-2"
@@ -3667,71 +3977,6 @@
           },
           "file_type": {
             "$ref": "#/components/schemas/FileType"
-          },
-          "creation_date": {
-            "$ref": "#/components/schemas/CreationDate-2"
-          }
-        }
-      },
-      "ID-13": {
-        "description": "Hex encoded unique identifier of the document",
-        "type": "string",
-        "minLength": 1,
-        "example": "0xAAAAD87eF86691778694C978EE1352CB6106adE6"
-      },
-      "FileIDs-2": {
-        "description": "IDs of the files that this document is comprised of.",
-        "type": "string",
-        "minLength": 1,
-        "example": [
-          "0xCCCF443FaED05e40C6b4480818626bc140C3d498",
-          "0xFFCAA43FaED05e40C6b4480818626bc140C3d498"
-        ]
-      },
-      "SignatureRequestedProfiles": {
-        "description": "IDs from the profiles that have been requested to sign.",
-        "type": "string",
-        "minLength": 1,
-        "example": "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79, 0xE71dDFB1548973a482be7B06c759e22C670b9770]"
-      },
-      "SignedByProfiles": {
-        "description": "IDs from profiles that have signed this document.",
-        "type": "string",
-        "minLength": 1,
-        "example": "[0x666569Bb7FcecD5c54Ed0EbB67817d1c46247E79]"
-      },
-      "SignatureIDs": {
-        "description": "IDs from the signatures that have been attached to this document",
-        "type": "string",
-        "minLength": 1,
-        "example": "[0x244Fe07498e52Ff5B7BF6BD6a38c38c1254374e2, 0xa62664c243F906559657D09A763c60059733abBb]"
-      },
-      "CreationDate-3": {
-        "description": "The date for when the document was created.",
-        "type": "string",
-        "format": "date",
-        "minLength": 1
-      },
-      "Document": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/schemas/ID-13"
-          },
-          "profile_id": {
-            "$ref": "#/components/schemas/ID-2"
-          },
-          "file_ids": {
-            "$ref": "#/components/schemas/FileIDs-2"
-          },
-          "signature_requested_profiles": {
-            "$ref": "#/components/schemas/SignatureRequestedProfiles"
-          },
-          "signed_by_profiles": {
-            "$ref": "#/components/schemas/SignedByProfiles"
-          },
-          "singature_ids": {
-            "$ref": "#/components/schemas/SignatureIDs"
           },
           "creation_date": {
             "$ref": "#/components/schemas/CreationDate-3"
@@ -3863,6 +4108,15 @@
         "name": "proof_id",
         "in": "path",
         "description": "The hex encoded unique identifier of the proof",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Document": {
+        "name": "document_id",
+        "in": "path",
+        "description": "The hex encoded unique identifier of the Document",
         "required": true,
         "schema": {
           "type": "string"

@@ -1,43 +1,11 @@
+parameters:
+  - $ref: ../components/parameters/ids/Document.yaml
 get:
   tags:
     - Documents
-  summary: List Documents
-  description: Returns a list of all your documents
-  operationId: listDocuments
-  parameters:
-    - $ref: ../components/parameters/limit.yaml
-    - $ref: ../components/parameters/offset.yaml
-  responses:
-    "200":
-      description: OK
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: ../components/schemas/documents/Document.yaml
-    "400":
-      $ref: ../components/responses/errors/BadRequest.yaml
-    "401":
-      $ref: ../components/responses/errors/Unauthorized.yaml
-    "402":
-      $ref: ../components/responses/errors/RequestFailed.yaml
-    "429":
-      $ref: ../components/responses/errors/TooManyRequests.yaml
-    "500":
-      $ref: ../components/responses/errors/ServerError.yaml
-post:
-  tags:
-    - Documents
-  summary: Create a document
-  description: Creates a new document
-  operationId: createDocument
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: ../components/requestBodies/documents/Create.yaml
-    required: true
+  summary: Get a document
+  description: Retrieve an existing document.
+  operationId: getDocument
   responses:
     "200":
       description: OK
@@ -51,6 +19,31 @@ post:
       $ref: ../components/responses/errors/Unauthorized.yaml
     "402":
       $ref: ../components/responses/errors/RequestFailed.yaml
+    "404":
+      $ref: ../components/responses/errors/NotFound.yaml
+    "429":
+      $ref: ../components/responses/errors/TooManyRequests.yaml
+    "500":
+      $ref: ../components/responses/errors/ServerError.yaml
+delete:
+  tags:
+    - Documents
+  summary: Delete a document
+  description: Delete a document
+  operationId: deleteDocument
+  responses:
+    "200":
+      description: OK
+    "400":
+      $ref: ../components/responses/errors/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/errors/Unauthorized.yaml
+    "402":
+      $ref: ../components/responses/errors/RequestFailed.yaml
+    "404":
+      $ref: ../components/responses/errors/NotFound.yaml
+    "409":
+      $ref: ../components/responses/errors/Conflict.yaml
     "429":
       $ref: ../components/responses/errors/TooManyRequests.yaml
     "500":
